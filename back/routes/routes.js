@@ -5,13 +5,7 @@ const multer = require("multer")
 const { fileStorage, uploadImage } = require("../middleware/upload.js")
 
 
-router.post('/uploadMultipleImages' , uploadImage.array('images',3),(req,res)=>
-res.send(req.files)
-,(errror , req ,res ,next)=>{
-    res.status(400).send({error: error.message});
-})
-
-  
+router.post('/add-Product',uploadImage.array('img',3),AddProduct)
 
 
 module.exports = router
