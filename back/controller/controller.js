@@ -4,35 +4,37 @@ const Products = require("../models/productmodel")
 
 exports.AddProduct = async (req,res) => {
     try {
-    const {body} = req
     const product = {
-    img : [{
-        img1:
-        {   src : body.img.img1.src,
-            alt : body.img.img1.alt
-        },
-        img2:
-        {
-            src : body.img.img2.src,
-            alt : body.img.img2.alt
-        },
-        img3:
-        {
-            src : body.img.img3.src,
-            alt : body.img.img3.alt
-        }
-    }],
-    title : body.title,
-    description : body.description,
-    price :body.price,
-    dimension:[{longeur : body.longeur , largeur : body.largeur , hauteur : body.hauteur}],
-    couleur : body.couleur,
-    matiere : body.matiere
-    
-    }
+        title : req.body.title,
+        description : req.body.description,
+        price :req.body.price,
+        dimension:[{longeur : req.body.longeur , largeur : req.body.largeur , hauteur : req.body.hauteur}],
+        couleur : req.body.couleur,
+        matiere : req.body.matiere,
+        img : [{
+            img1:
+            {   src : req.files[0].path,
+                alt : req.files[0].originalname
+            },
+            img2:
+            {
+                src : req.files[1].path,
+                alt : req.files[1].originalname
+            },
+            img3:
+            {
+                src : req.files[2].path,
+                alt : req.files[2].originalname
+            }
+        }],
+}
 
-    res.status(200).json({msg : "test route"})
+let newProduct = await new Products(product)
+newProduct.save()
+res.status(200).json(newProduct)
     } catch (error) {
         console.log(error)
     }
 }
+
+
