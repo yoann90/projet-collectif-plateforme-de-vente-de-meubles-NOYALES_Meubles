@@ -1,9 +1,9 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = 3003;
 const routes = require("./routes/routes.js");
 const db =require('./config/database');
-const multer = require("multer")
+const multer = require("multer");
 
 
 
