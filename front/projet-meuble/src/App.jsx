@@ -1,23 +1,26 @@
 import "./App.css";
 import React from "react";
-import Navbar from "./PagePrincipal/PagePrincipal";
-import { BrowseRouter, Routes, Route } from "react-router-dom";
+import {Navbar,Header} from "./PagePrincipal/PagePrincipal";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 
 function App() {
   return (
     <>
-    <BrowseRouter>
+    <BrowserRouter>
     <Routes>
-      <Route path=>
-      </Route>
-s
-      <Navbar />
-    </Routes>
-    </BrowseRouter>
+      <Route path="/" element={<Navbar />} />
+      {/* <Route path="/" element={<Header />} /> */}
+      </Routes>
+
+   
+    </BrowserRouter>
+      
+       <Header />
     </>
   )
 }
 
 export default App;
+

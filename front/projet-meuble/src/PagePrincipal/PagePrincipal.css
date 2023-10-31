@@ -3,6 +3,12 @@
     margin: 0;
     box-sizing: border-box;
 }
+.nav-bar{
+    position: relative;
+   
+   
+   
+}
 .nav-item {
     position: relative;
     display: flex;
@@ -10,7 +16,28 @@
     align-items: center;
     padding:20px;
     background: white;
-    color:#333;
+    color:black;
     border-bottom: black;
     border: 1px solid #333;
+   
+    
+    
+}
+.nav-item li {
+    
+    list-style: none;
+    cursor: pointer;
+    font-size: calc(8px +1vw);
+    transition: color .5s ease-in-out;
+    
+}
+.sear-bar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    
+}
+.nav-item li:hover{
+    color: gray;
 }
