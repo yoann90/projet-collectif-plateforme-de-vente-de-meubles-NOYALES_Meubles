@@ -1,10 +1,14 @@
 const {mongoose } = require("mongoose")
 
 const productsSchema = mongoose.Schema({
-img :{
-src :{type:String ,required :true},
-alt :{type:String,required :true},
-},
+img :[{
+    img1:{ src :{type:String ,required :true},
+            alt :{type:String,required :false},},
+    img2:{ src :{type:String ,required :true},
+            alt :{type:String,required :false},},
+    img3:{ src :{type:String ,required :true},
+            alt :{type:String,required :false},}
+}],
 title : {type: String ,required : true },
 description:{type:String,required:true},
 price : {type: Number ,required: true },
