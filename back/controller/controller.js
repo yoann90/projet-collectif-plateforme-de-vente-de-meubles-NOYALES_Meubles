@@ -4,6 +4,7 @@ const User = require("../models/usermodel");
 const bcrypt = require("bcrypt");
 const muv = require("mongoose-unique-validator");
 const { mongoose } = require("mongoose");
+const jwt = require("jsonwebtoken");
 mongoose.plugin(muv);
 
 exports.AddProduct = async (req, res) => {
@@ -127,10 +128,23 @@ exports.GetAllUser = async (req, res) => {
 
 // exports.Login = async (req, res) => {
 //     try {
-//       let id = req.params.id;
-//       let oneUser = await User.findById(id);
-//       oneUser.id
-//       res.status(200).json(oneProduct);
+//       let login = req.body.login;
+//       let Userpassword = req.body.password;
+
+//       let verifyUser = await User.find({login : login});
+//       if(verifyUser.length > 0 ){
+//         if(bcrypt.compare(Userpassword, verifyUser.password)){
+//         jwt
+
+
+//         }
+
+//       }
+
+//       {
+//         //token 
+//       }
+     
 //     } catch (error) {
 //       res.status(400).json({ msg: error });
 //     }
