@@ -1,5 +1,8 @@
 import "./PagePrincipal.css" 
-import React from 'react'
+///import meuble from "./images/_(1).jpeg";
+import meuble from "../../images/Age of Diesel.jpeg";
+
+// import React from 'react'
 
 function Navbar() {
     return (
@@ -25,5 +28,23 @@ function Navbar() {
       </>
     );
   }
+  function Header() {
+    return (
+      <>
+     <header>
+      <div className="image-header">
+        <img src={meuble} alt="" />
+        <h1>Noyales meuble</h1>
+      </div>
+
+     </header>
+    
+     
+      </>
+    );
+  }
   
-  export default Navbar
+  // export default Navbar;
+  // export default Header;
+
+  export {Navbar, Header}
