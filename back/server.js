@@ -9,6 +9,7 @@ const multer = require("multer");
 
 
 
+
 db()
 //Cette ligne active la prise en charge de l'analyse des corps de requête HTTP au format URL-encoded. Cela permet de traiter les données envoyées via les formulaires HTML.
 app.use(express.urlencoded({extended:true}));

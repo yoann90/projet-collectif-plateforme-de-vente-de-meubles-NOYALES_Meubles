@@ -166,7 +166,6 @@ exports.Login = async (req, res) => {
       if(!passwordVerify){
         return res.status(401).json({ message: "Mot de passe incorrect." })
       }else{
-        console.log(process.env.SECRET_KEY)
      const token = jwt.sign({id: verifyUser._id }, process.env.SECRET_KEY, { expiresIn: '1h'});
     res.status(200).json({ token: token, id: verifyUser.id ,message: "Login réussie."})
       }
@@ -175,3 +174,14 @@ exports.Login = async (req, res) => {
       res.status(400).json({ msg: error });
     }
   };
+  
+
+exports.test = async(req,res)=>{
+try {
+res.status(200).json({msg : "acces a la route ok "})
+} catch (error) {
+console.log(error)
+}
+
+
+}
