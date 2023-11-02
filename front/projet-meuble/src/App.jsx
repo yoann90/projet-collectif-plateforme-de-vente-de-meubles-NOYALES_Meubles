@@ -2,6 +2,7 @@ import "./App.css";
 import React from "react";
 import {Navbar,Header} from "./PagePrincipal/PagePrincipal";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Furniture from "./PageDetail/components/PageDetail";
 
 
 
@@ -18,6 +19,8 @@ function App() {
     </BrowserRouter>
       
        <Header />
+       <Furniture />
+
     </>
   )
 }
