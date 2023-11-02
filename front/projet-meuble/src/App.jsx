@@ -2,6 +2,7 @@ import "./App.css";
 // import React from "react";
 import {Navbar,Header,Produit,AllProduits,Cart,ScrollToTopButton} from "./PagePrincipal/PagePrincipal";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Furniture from "./PageDetail/components/PageDetail";
 
 
 
@@ -19,6 +20,11 @@ function App() {
     <Navbar />
        {/* <Header />
        <Produit /> */}
+     
+       <Header />
+       <Furniture />
+
+       <Produit />
       <Cart />
      
       <AllProduits />

@@ -1,6 +1,6 @@
 const {Router} = require("express")
 // Cette ligne importe des fonctions à partir du fichier controller.js et les assigne à des variables pour les utiliser ultérieurement. Ces fonctions gèrent les différentes opérations liées aux produits et aux utilisateurs de votre application.
-const {AddProduct,DeleteProduct, GetOneProduct, GetAllProduct, AddUser, DeleteUser,GetOneUser,GetAllUser} = require("../controller/controller.js")
+const {AddProduct,DeleteProduct, GetOneProduct, GetAllProduct, AddUser, DeleteUser,GetOneUser,GetAllUser, Login} = require("../controller/controller.js")
 const router = Router()
 const multer = require("multer")
 const { fileStorage, uploadImage } = require("../middleware/upload.js")
@@ -16,6 +16,8 @@ router.post('/add-Product',uploadImage.array('img',3),AddProduct)
 
 
 
+
+router.post('/login',Login)
 // Cette route HTTP POST permet d'ajouter un nouvel utilisateur.
 router.post('/register',AddUser)
 // Cette route HTTP GET permet de récupérer un utilisateur spécifique en fonction de son identifiant.
