@@ -10,11 +10,13 @@ const muv = require("mongoose-unique-validator");
 const { mongoose } = require("mongoose");
 // Cette ligne importe le module jsonwebtoken, qui est utilisé pour créer et vérifier les tokens JWT (JSON Web Tokens). Ces tokens sont couramment utilisés pour gérer l'authentification et l'autorisation des utilisateurs dans une application.
 const jwt = require("jsonwebtoken");
+
 // Cette ligne ajoute le plugin mongoose-unique-validator à l'instance de Mongoose. Cela signifie que les schémas Mongoose qui utilisent cet instance auront la validation des champs uniques activée.
 mongoose.plugin(muv);
+require("dotenv").config()
 
 
-const secret = "djkhgjdgkhdksf;" // clé secrete pour le token(à changer par une methode plus safe)
+// clé secrete pour le token(à changer par une methode plus safe)
 
 
 // exporte une fonction asynchrone nommée AddProduct qui est utilisée pour ajouter un produit  à l'application en utilisant les données reçues dans la requête HTTP et de les enregistrer dans la BDD.
@@ -164,7 +166,8 @@ exports.Login = async (req, res) => {
       if(!passwordVerify){
         return res.status(401).json({ message: "Mot de passe incorrect." })
       }else{
-     const token = jwt.sign({id: verifyUser._id }, secret, { expiresIn: '1h'});
+        console.log(process.env.SECRET_KEY)
+     const token = jwt.sign({id: verifyUser._id }, process.env.SECRET_KEY, { expiresIn: '1h'});
     res.status(200).json({ token: token, id: verifyUser.id ,message: "Login réussie."})
       }
     
