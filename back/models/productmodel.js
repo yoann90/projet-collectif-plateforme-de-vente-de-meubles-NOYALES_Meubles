@@ -1,5 +1,5 @@
-const {mongoose } = require("mongoose")
-
+const {mongoose } = require("mongoose");
+// Cette partie crée un schéma de modèle de données pour les produits en utilisant la méthode Schema de Mongoose. Le schéma définit la structure des données que chaque produit doit avoir.
 const productsSchema = mongoose.Schema({
     title : {type: String ,required : true },
     description:{type:String,required:true},
