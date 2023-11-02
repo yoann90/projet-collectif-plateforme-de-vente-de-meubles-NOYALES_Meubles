@@ -8,8 +8,8 @@ import chaise2 from "../../images/Chaise de Salle à Manger.jpeg";
 import cartItem from "../../images/flashbak.webp";
 import cartItem2 from "../../images/AKBLOG-2.webp";
 import cartItem3 from "../../images/Memphis-Design.webp";
-
-
+// import detail from  "../page detail/page detail"
+// import connexion from  "../page connexion/page connexion"
 // import React from 'react'
 
 function Navbar() {
@@ -73,6 +73,8 @@ function Header() {
 }
 
 function Produit() {
+ 
+ 
   return (
     <>
       <section className="produit">
@@ -91,7 +93,7 @@ function Produit() {
                 $20.00 <strike>$40.00</strike>
               </p>
               <div className="link-detail">
-                <a href="">See more</a>
+                <a href="/detail">See more</a>
                 <a href="">Add to cart</a>
               </div>
               <div className="middle">
@@ -471,21 +473,26 @@ function Cart() {
     if (storedCart) {
       setCartItems(JSON.parse(storedCart));
     } 
-     
-    
   }, []);
 
   // Mettre à jour localStorage chaque fois que le panier change
-  useEffect(() => {
-    localStorage.setItem(cartKey, JSON.stringify(cartItems));
-  }, [cartItems]);
+  // useEffect(() => {
+  //   console.log("helloe",cartItems);
+  //   localStorage.setItem(cartKey, JSON.stringify(cartItems));
+  // }, [cartItems]);
+
 
   const addItemToCart = (item) => {
+
+    localStorage.setItem(cartKey, JSON.stringify([...cartItems, item]));
     setCartItems([...cartItems, item]);
+
   };
 
   const removeItemFromCart = (itemIndex) => {
     const updatedCart = cartItems.filter((_, index) => index !== itemIndex);
+    localStorage.setItem(cartKey, JSON.stringify(updatedCart));
+
     setCartItems(updatedCart);
   };
 
