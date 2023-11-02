@@ -4,7 +4,7 @@ const express = require("express");
 const Products = require("../models/productmodel");
 const User = require("../models/usermodel");
 // Cette ligne importe le module bcryptjs, qui est utilisé pour le hachage (cryptage) des mots de passe. Il est couramment utilisé pour sécuriser les mots de passe stockés dans la base de données.
-const bcrypt = require("bcryptjs");
+const bcrypt = require("bcrypt");
 //Cette ligne importe le module mongoose-unique-validator, qui est utilisé pour valider l'unicité des champs dans les schémas Mongoose. Il s'assure que certains champs d'un modèle de données sont uniques.
 const muv = require("mongoose-unique-validator");
 const { mongoose } = require("mongoose");
@@ -151,26 +151,24 @@ exports.GetAllUser = async (req, res) => {
 exports.Login = async (req, res) => {
     try {
       let login = req.body.login;
-      let Userpassword = req.body.password;
+      let userPassword = req.body.password;
 
       let verifyUser = await User.findOne({login : login});
-      if(!verifyUser ){
+     
+      if(!verifyUser){
+          res.status(400).json({ msg: "utilisateur introuvable" });
+        }
+        else{
 
-        res.status(400).json({ msg: error });
-      }
-
-     let passwordHash = await bcrypt.hashSync(req.body.password, 10)
-      if(!passwordHash){
+     let passwordVerify = await bcrypt.compare(userPassword,verifyUser.password);
+      if(!passwordVerify){
         return res.status(401).json({ message: "Mot de passe incorrect." })
+      }else{
+     const token = jwt.sign({id: verifyUser._id }, secret, { expiresIn: '1h'});
+    res.status(200).json({ token: token, id: verifyUser.id ,message: "Login réussie."})
       }
-
-      const token = jwt.sign({ _id: id }, secret, {
-        expiresIn: '1h',
-      });
-      
-    res.status(200).json({ token: token, _id: id, message: "Login réussie." });
     
-  } catch (error) {
+  }} catch (error) {
       res.status(400).json({ msg: error });
     }
   };
