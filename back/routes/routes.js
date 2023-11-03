@@ -1,9 +1,11 @@
 const {Router} = require("express")
 // Cette ligne importe des fonctions à partir du fichier controller.js et les assigne à des variables pour les utiliser ultérieurement. Ces fonctions gèrent les différentes opérations liées aux produits et aux utilisateurs de votre application.
-const {AddProduct,DeleteProduct, GetOneProduct, GetAllProduct, AddUser, DeleteUser,GetOneUser,GetAllUser, Login} = require("../controller/controller.js")
+const {AddProduct,DeleteProduct, GetOneProduct, GetAllProduct, AddUser, DeleteUser,GetOneUser,GetAllUser, Login,test, UpdateProduct} = require("../controller/controller.js")
 const router = Router()
 const multer = require("multer")
 const { fileStorage, uploadImage } = require("../middleware/upload.js")
+const {authenticateJWT} = require("../middleware/auth.js")
+
 
 
 
@@ -29,6 +31,10 @@ router.get('/get-AllUser/',GetAllUser)
 router.delete('/delete-user/:id', DeleteUser)
 // Cette route HTTP DELETE permet de supprimer un produit en fonction de son identifiant.
 router.delete('/delete-Product/:id',DeleteProduct)
+
+router.put('/edit/:id',uploadImage.array('img',3),UpdateProduct)
+
+router.get('/test',authenticateJWT,test)
 
 module.exports = router
 

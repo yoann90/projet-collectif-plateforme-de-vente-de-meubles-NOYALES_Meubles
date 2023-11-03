@@ -5,7 +5,7 @@ const muv = require("mongoose-unique-validator")
 const userSchema = mongoose.Schema({
 firstname : {type: String ,required:true },
 lastname : {type: String ,required:true },
-login : {type: String ,required:true },
+login : {type: String ,required:true,unique:true },
 email: {type:String ,required: true,unique:true},
 password : {type: String ,required: true },
 role:{type:String ,default:"User",required:false}
