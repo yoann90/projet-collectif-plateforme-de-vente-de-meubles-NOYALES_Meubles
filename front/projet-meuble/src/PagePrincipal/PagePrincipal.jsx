@@ -10,6 +10,7 @@ import cartItem2 from "../../images/AKBLOG-2.webp";
 import cartItem3 from "../../images/Memphis-Design.webp";
 
 
+
 // import React from 'react'
 
 function Navbar() {
@@ -91,7 +92,8 @@ function Produit() {
                 $20.00 <strike>$40.00</strike>
               </p>
               <div className="link-detail">
-                <a href="">See more</a>
+
+                <a href="/detail">See more</a>
                 <a href="">Add to cart</a>
               </div>
               <div className="middle">

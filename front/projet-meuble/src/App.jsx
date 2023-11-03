@@ -1,8 +1,12 @@
 import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Recap from "./PageDetail/components/PageDetail";
 // import React from "react";
 import {Navbar,Header,Produit,AllProduits,Cart,ScrollToTopButton} from "./PagePrincipal/PagePrincipal";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Furniture from "./PageDetail/components/PageDetail";
+
+
+
 
 
 
@@ -11,16 +15,17 @@ function App() {
     <>
     <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Navbar />} />
+      {/* <Route path="/" element={<Navbar />} /> */}
       {/* <Route path="/" element={<Header />} /> */}
+      <Route path="/detail" element={< Furniture />  } /> 
       </Routes>
 
    
     </BrowserRouter>
-     
-       <Header />
-       <Furniture />
-
+     <Navbar />
+       {/* <Header /> */}
+    
+  
        <Produit />
       <Cart />
      
