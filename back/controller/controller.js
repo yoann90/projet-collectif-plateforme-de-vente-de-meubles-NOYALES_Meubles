@@ -148,8 +148,7 @@ exports.GetAllUser = async (req, res) => {
   }
 };
 
-
-
+// Cette fonction vérifie les informations d'authentification fournies par l'utilisateur, recherche l'utilisateur dans la base de données, compare les mots de passe(hashé et non hashé fourni par l'utilisateur), génère un jeton JWT en cas de succès
 exports.Login = async (req, res) => {
     try {
       let login = req.body.login;
@@ -182,6 +181,40 @@ res.status(200).json({msg : "acces a la route ok "})
 } catch (error) {
 console.log(error)
 }
-
-
 }
+
+exports.UpdateProduct = async (req, res) => {
+  
+
+  const product = {
+    title: req.body.title,
+      description: req.body.description,
+      price: req.body.price,
+      dimension: [
+        {
+          longeur: req.body.longeur,
+          largeur: req.body.largeur,
+          hauteur: req.body.hauteur,
+        },
+      ],
+      couleur: req.body.couleur,
+      matiere: req.body.matiere,
+      img: [
+        {
+          img1: { src: req.files[0].path, alt: req.files[0].originalname },
+          img2: {
+            src: req.files[1].path,
+            alt: req.files[1].originalname,
+          },
+          img3: {
+            src: req.files[2].path,
+            alt: req.files[2].originalname,
+          },
+        },
+      ],  
+  }
+
+  const id = req.params.id
+
+  await Products.updateOne({"_id": id }, product);
+};
