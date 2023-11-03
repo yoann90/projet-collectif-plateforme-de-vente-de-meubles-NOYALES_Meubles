@@ -154,6 +154,7 @@ exports.Login = async (req, res) => {
       let login = req.body.login;
       let userPassword = req.body.password;
 
+      // utilise User.findOne({login : login}) pour rechercher un utilisateur dans la base de données en fonction du nom d'utilisateur. Si aucun utilisateur correspondant n'est trouvé, elle renvoie une réponse JSON avec un code d'erreur 400 (Bad Request) indiquant "utilisateur introuvable".
       let verifyUser = await User.findOne({login : login});
      
       if(!verifyUser){
@@ -161,11 +162,12 @@ exports.Login = async (req, res) => {
         }
         else{
 
+      // Si un utilisateur correspondant est trouvé dans la base de données, la fonction utilise Bcrypt pour comparer le mot de passe fourni avec le mot de passe haché stocké dans la base de données.     
      let passwordVerify = await bcrypt.compare(userPassword,verifyUser.password);
       if(!passwordVerify){
-        return res.status(401).json({ message: "Mot de passe incorrect." })
+        return res.status(401).json({ message: "Mot de passe incorrect." }) // Si le mot de passe ne correspond pas, elle renvoie une réponse JSON avec un code d'erreur 401 (Unauthorized) indiquant "Mot de passe incorrect".
       }else{
-     const token = jwt.sign({id: verifyUser._id }, process.env.SECRET_KEY, { expiresIn: '1h'});
+     const token = jwt.sign({id: verifyUser._id }, process.env.SECRET_KEY, { expiresIn: '1h'}); // Si le mot de passe correspond avec succès, la fonction génère un jeton JWT en utilisant jwt.sign()
     res.status(200).json({ token: token, id: verifyUser.id ,message: "Login réussie."})
       }
     
@@ -183,10 +185,12 @@ console.log(error)
 }
 }
 
+// Cette fonction UpdateProduct est destinée à mettre à jour les informations d'un produit existant dans une base de données.
 exports.UpdateProduct = async (req, res) => {
   
 try {
     
+  // elle crée un objet product à partir des données fournies dans la requête. Cet objet contient des propriétés telles que le titre, la description, le prix, les dimensions, la couleur, la matière et les images du produit.
     const product = {
       title: req.body.title,
         description: req.body.description,
@@ -215,9 +219,11 @@ try {
         ],  
     }
   
+    // Extrait l'identifiant du produit à mettre à jour à partir des paramètres de la requête (req.params.id), ce qui permet de spécifier quel produit doit être modifié.
     const id = req.params.id
   
-    await Products.updateOne({"_id": id }, product);
+    // la fonction utilise Products.updateOne() pour mettre à jour le produit dans la base de données. La méthode updateOne prend deux arguments : le premier est un filtre qui spécifie quel produit doit être mis à jour (en fonction de son identifiant), et le deuxième argument est l'objet product contenant les nouvelles données du produit.
+    await Products.updateOne({"_id": id }, product); // La mise à jour de la base de données est effectuée de manière asynchrone, et si l'opération réussit, elle renvoie une réponse JSON avec un code 200 (OK) indiquant "produit modifié".
     res.status(200).json({msg : "produit modifé batard"})
 } catch (error) {
     res.status(401).json({msg : error})
