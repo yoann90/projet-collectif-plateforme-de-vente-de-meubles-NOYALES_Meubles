@@ -46,15 +46,6 @@ function App() {
       
       </Routes>
     </BrowserRouter>
-     
-       <Header />
-       <Furniture />
-
-       <Produit />
-      <Cart />
-     
-      <AllProduits />
-      <ScrollToTopButton />
     </>
   )
 }
