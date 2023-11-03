@@ -4,17 +4,19 @@ const express = require("express");
 const Products = require("../models/productmodel");
 const User = require("../models/usermodel");
 // Cette ligne importe le module bcryptjs, qui est utilisé pour le hachage (cryptage) des mots de passe. Il est couramment utilisé pour sécuriser les mots de passe stockés dans la base de données.
-const bcrypt = require("bcryptjs");
+const bcrypt = require("bcrypt");
 //Cette ligne importe le module mongoose-unique-validator, qui est utilisé pour valider l'unicité des champs dans les schémas Mongoose. Il s'assure que certains champs d'un modèle de données sont uniques.
 const muv = require("mongoose-unique-validator");
 const { mongoose } = require("mongoose");
 // Cette ligne importe le module jsonwebtoken, qui est utilisé pour créer et vérifier les tokens JWT (JSON Web Tokens). Ces tokens sont couramment utilisés pour gérer l'authentification et l'autorisation des utilisateurs dans une application.
 const jwt = require("jsonwebtoken");
+
 // Cette ligne ajoute le plugin mongoose-unique-validator à l'instance de Mongoose. Cela signifie que les schémas Mongoose qui utilisent cet instance auront la validation des champs uniques activée.
 mongoose.plugin(muv);
+require("dotenv").config()
 
 
-const secret = "djkhgjdgkhdksf;" // clé secrete pour le token(à changer par une methode plus safe)
+// clé secrete pour le token(à changer par une methode plus safe)
 
 
 // exporte une fonction asynchrone nommée AddProduct qui est utilisée pour ajouter un produit  à l'application en utilisant les données reçues dans la requête HTTP et de les enregistrer dans la BDD.
@@ -146,31 +148,73 @@ exports.GetAllUser = async (req, res) => {
   }
 };
 
-
-
+// Cette fonction vérifie les informations d'authentification fournies par l'utilisateur, recherche l'utilisateur dans la base de données, compare les mots de passe(hashé et non hashé fourni par l'utilisateur), génère un jeton JWT en cas de succès
 exports.Login = async (req, res) => {
     try {
       let login = req.body.login;
-      let Userpassword = req.body.password;
+      let userPassword = req.body.password;
 
       let verifyUser = await User.findOne({login : login});
-      if(!verifyUser ){
+     
+      if(!verifyUser){
+          res.status(400).json({ msg: "utilisateur introuvable" });
+        }
+        else{
 
-        res.status(400).json({ msg: error });
-      }
-
-     let passwordHash = await bcrypt.hashSync(req.body.password, 10)
-      if(!passwordHash){
+     let passwordVerify = await bcrypt.compare(userPassword,verifyUser.password);
+      if(!passwordVerify){
         return res.status(401).json({ message: "Mot de passe incorrect." })
+      }else{
+     const token = jwt.sign({id: verifyUser._id }, process.env.SECRET_KEY, { expiresIn: '1h'});
+    res.status(200).json({ token: token, id: verifyUser.id ,message: "Login réussie."})
       }
-
-      const token = jwt.sign({ _id: id }, secret, {
-        expiresIn: '1h',
-      });
-      
-    res.status(200).json({ token: token, _id: id, message: "Login réussie." });
     
-  } catch (error) {
+  }} catch (error) {
       res.status(400).json({ msg: error });
     }
   };
+  
+
+exports.test = async(req,res)=>{
+try {
+res.status(200).json({msg : "acces a la route ok "})
+} catch (error) {
+console.log(error)
+}
+}
+
+exports.UpdateProduct = async (req, res) => {
+  
+
+  const product = {
+    title: req.body.title,
+      description: req.body.description,
+      price: req.body.price,
+      dimension: [
+        {
+          longeur: req.body.longeur,
+          largeur: req.body.largeur,
+          hauteur: req.body.hauteur,
+        },
+      ],
+      couleur: req.body.couleur,
+      matiere: req.body.matiere,
+      img: [
+        {
+          img1: { src: req.files[0].path, alt: req.files[0].originalname },
+          img2: {
+            src: req.files[1].path,
+            alt: req.files[1].originalname,
+          },
+          img3: {
+            src: req.files[2].path,
+            alt: req.files[2].originalname,
+          },
+        },
+      ],  
+  }
+
+  const id = req.params.id
+
+  await Products.updateOne({"_id": id }, product);
+};
