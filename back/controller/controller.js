@@ -185,36 +185,42 @@ console.log(error)
 
 exports.UpdateProduct = async (req, res) => {
   
-
-  const product = {
-    title: req.body.title,
-      description: req.body.description,
-      price: req.body.price,
-      dimension: [
-        {
-          longeur: req.body.longeur,
-          largeur: req.body.largeur,
-          hauteur: req.body.hauteur,
-        },
-      ],
-      couleur: req.body.couleur,
-      matiere: req.body.matiere,
-      img: [
-        {
-          img1: { src: req.files[0].path, alt: req.files[0].originalname },
-          img2: {
-            src: req.files[1].path,
-            alt: req.files[1].originalname,
+try {
+    
+    const product = {
+      title: req.body.title,
+        description: req.body.description,
+        price: req.body.price,
+        dimension: [
+          {
+            longeur: req.body.longeur,
+            largeur: req.body.largeur,
+            hauteur: req.body.hauteur,
           },
-          img3: {
-            src: req.files[2].path,
-            alt: req.files[2].originalname,
+        ],
+        couleur: req.body.couleur,
+        matiere: req.body.matiere,
+        img: [
+          {
+            img1: { src: req.files[0].path, alt: req.files[0].originalname },
+            img2: {
+              src: req.files[1].path,
+              alt: req.files[1].originalname,
+            },
+            img3: {
+              src: req.files[2].path,
+              alt: req.files[2].originalname,
+            },
           },
-        },
-      ],  
-  }
+        ],  
+    }
+  
+    const id = req.params.id
+  
+    await Products.updateOne({"_id": id }, product);
+    res.status(200).json({msg : "produit modifé batard"})
+} catch (error) {
+    res.status(401).json({msg : error})
+}
 
-  const id = req.params.id
-
-  await Products.updateOne({"_id": id }, product);
 };

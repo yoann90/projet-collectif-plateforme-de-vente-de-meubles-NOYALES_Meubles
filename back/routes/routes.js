@@ -32,7 +32,7 @@ router.delete('/delete-user/:id', DeleteUser)
 // Cette route HTTP DELETE permet de supprimer un produit en fonction de son identifiant.
 router.delete('/delete-Product/:id',DeleteProduct)
 
-router.put('/edit/:id', UpdateProduct)
+router.put('/edit/:id',uploadImage.array('img',3),UpdateProduct)
 
 router.get('/test',authenticateJWT,test)
 
