@@ -2,11 +2,11 @@ import React, {Component} from "react";
 import Recap from './PageDetailRecap'; 
 import meuble from "../../../images/70s Italian Chrome Table Lamp - iD Lights.jpeg";
 import "../PageDetail.css"
-import table from "../../../images/Table basse _G3_ par Just van Beek pour Metaform 70's.jpeg";
-import lampe from "../../../images/_ (3).jpeg"
-import chaise from "../../../images/Chaise de Salle à Manger.jpeg"
+import table from "../../../images/Table basse _G3.jpeg";
+import lampe from "../../../images/(3).jpeg";
+import chaise from "../../../images/Chaise de Salle à Manger.jpeg";
 import { Navigate } from "react-router-dom";
-import Navigation from "./Navigation";
+
 
 
 class Furniture extends Component {

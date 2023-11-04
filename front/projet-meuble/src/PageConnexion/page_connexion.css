@@ -10,11 +10,23 @@ body {
     font-family: ;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    height: 100vh;
+    height: 50vh;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url("../../images/salonconnexionjpg.jpg") ;
+    /* background-image: url("../../images/salonconnexionjpg.jpg") ; */
     
+}
+.pageConnexion{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+  
+}
+.pageConnexion img{
+    width: 100%;
 }
 
 code {
@@ -22,16 +34,20 @@ code {
 }
 
 .container {
-    position: relative;
-    display: flex;
-    align-items: center;
+    position: absolute;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
     flex-direction: column;
-    margin: 350px;
-    margin-top: 200px;
-    margin-bottom: 200px;
+    /* left: 50%; */
+    transform: translate(-50%,);
+    width: 50%;
+    height: 65%;
+    /* margin: 0px; */
+    /* margin-top: 0px; */
+    margin-bottom: 125px;
     background: rgba(255, 255, 255, 0.653);
-    padding-bottom: 0px;
-    /* border: 3px solid ; */
+    border: 10px solid rgba(255, 255, 255, 0.751);
 }
 
 .header {
@@ -40,6 +56,9 @@ code {
     align-items: center;
     gap: 9px;
     width: 100%;
+    padding: 10px 0 0 0;
+    font-weight: 900;
+   
 }
 
 .text {
@@ -53,33 +72,34 @@ code {
     font-size: calc(10px + 2vw); 
     font-weight: 700;
 
+
+
 }
 
 .underline {
-    width: 61px;
+    width: 40%;
     height: 6px;
     background: rgba(246, 128, 31, 0.749);
     border-radius: 9px;
 }
 
-.inputs {
-    margin-top: 85px;
+.inputs-Champs-infos-ensemble {
+    margin: 85px 170px 6px 50px;
     display: flex;
+    width: 63%;
+    height: 50%;
     flex-direction: column;
     gap: 25px;
     /* border: 3px solid orangered; */
-    padding: 0 10px;
-    font-size: calc(10px + 2vw);
+    font-size: calc(10px + 1vw);
 }
 
-.input {
+.input-champs-infos-indiv {
     display: flex;
     align-items: center;
-    margin: auto;
+    margin: 0 auto;
     width: 100%;
     font-size: calc(10px + 2vw);
-    /* width: 480px; */
-    height: 80px;
     background: rgba(200, 115, 40, 0.621);
     border-radius: 6px;
     /* border: 3px solid red; */
@@ -88,15 +108,16 @@ code {
     
 }
 
-.input input {
+.input-champs-infos-indiv input { /* input dans input là ou on écrit les champs (email et mdp)*/
     height: 50px;
-    width: 50%;
+    width: 70%;
     background: transparent;
     border:none;
     outline: none;
     color: rgb(248, 245, 245);
     font-size: 25px;
     font-size: calc(0px + 2vw);
+    /* border: 5px solid green; */
 }
 
 .img-utilisateur img{
@@ -114,26 +135,26 @@ code {
     margin: 0px 5px -5px 5px;
 }
 
-.forgot-password{
+.forgot-password{ /*Mot de passe oublié*/
     display: flex;
-    padding-left: 62px;
-    margin-top: 27px;
+    margin: 18px 0 11px 0;
+    width: 95%;
     color: rgb(70, 67, 67);
-    font-size: 18px;
+    font-size: 22px;
     justify-content: center;
 }
 
-.forgot-password span{
+.forgot-password span{ /*Cliquez ici*/
     color: #f1740e;
     cursor: pointer;
-    
+    font-weight: 900;
 
 }
 
 .submit-container{
     display: flex;
     gap: 30px;
-    margin: 60px auto;
+    margin: auto;
     font-size: calc(0px + 2vw);
 
 }
