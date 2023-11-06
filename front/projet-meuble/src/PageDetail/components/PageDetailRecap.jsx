@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from "react-router-dom";
 const Recap = (props) =>{
 return(
 <div className='detail-box'>
@@ -11,8 +11,9 @@ return(
 <p>Matière: {props.matiere} </p>
 <p>Dimensions: {props.dimensions}</p>
 </div>
-
-<button className='btn' type='submit'>Shop here! </button>
+<div className='shop-cart'>
+<Link  className='btn' to="/Cart">Shop here!</Link>
+</div>
 </div>
 
 )
