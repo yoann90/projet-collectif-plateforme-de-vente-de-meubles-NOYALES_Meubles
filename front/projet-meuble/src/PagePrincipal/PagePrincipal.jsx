@@ -8,9 +8,45 @@ import cartItem from "../../images/flashbak.webp";
 import cartItem2 from "../../images/AKBLOG-2.webp";
 import cartItem3 from "../../images/Memphis-Design.webp";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { useEffect } from "react";
+import { useState } from "react";
 
 function PagePrincipal() {
-  return (
+let [data,setData]= useState([]);
+
+useEffect(()=>{
+const requestProducts = async()=>{
+let requete = await axios.get(`http://localhost:3003/get-AllProduct`);
+if(requete.data)
+setData(requete.data)
+console.log(requete.data)}
+requestProducts()
+},[])
+
+// const renderListOfMeuble = (data) => {
+//   return data.map((meuble,i) => 
+//   <div className="img-card" key={i}>
+//   <h3>{meuble.name}</h3>
+// <p>
+// {meuble.price}<strike>$40.00</strike>
+// </p>
+// <div className="link-detail">
+//   <Link to="/detail">See more</Link>
+//   <Link to="/Cart">Add to cart</Link>
+// </div>
+// <div className="middle">
+//   <div className="seeMore">
+//     <Link to="/detail">See more</Link>
+//   </div>
+// </div>
+// <div className="badge-overlay">
+//   <span className="top-left badge orange">Sale 50% Off</span>
+// </div>
+// </div>)}
+
+
+return (
     <>
       <header>
         <div className="gallery-item">
@@ -42,27 +78,15 @@ function PagePrincipal() {
             <a href="#product">View All Products</a>
           </div>
           <div className="img-box">
-            <div className="img-card">
-              {/* {data -
-                product.map((item, i) => {
-                  return (
-                    <item
-                      key={i}
-                      id={item.id}
-                      name={item.name}
-                      image={item.image}
-                      new-price={item.new-price}
-                      old-price={item.old-price}
-                    />
-                  );
-                })} */}
-              <img src={chaise2} alt="" />
-              <a href="">
-                <h3>Chaise de Salle à Manger</h3>
-              </a>
-              <p>
-                $20.00 <strike>$40.00</strike>
-              </p>
+          
+          { data.map((meuble,i) => 
+  <div className="img-card" key={i}>
+
+      <img src= {`http://localhost:3003/`+ meuble.img[0].img1.alt} alt="" />
+              
+                <h3>{meuble.title}</h3>
+              
+              <p>{meuble.price}</p>
               <div className="link-detail">
                 <Link to="/detail">See more</Link>
                 <Link to="/Cart">Add to cart</Link>
@@ -72,11 +96,8 @@ function PagePrincipal() {
                   <Link to="/detail">See more</Link>
                 </div>
               </div>
-              <div className="badge-overlay">
-                <span className="top-left badge orange">Sale 50% Off</span>
-              </div>
-            </div>
-            <div className="img-card">
+            </div>)}
+            {/* <div className="img-card">
               <img src={chaise} alt="" />
               <a href="">
                 <h3>Chaise en Velours</h3>
@@ -160,7 +181,7 @@ function PagePrincipal() {
                   <Link to="/detail">See more</Link>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="row">
@@ -389,5 +410,6 @@ function PagePrincipal() {
     </>
   );
 }
+
 
 export default PagePrincipal;

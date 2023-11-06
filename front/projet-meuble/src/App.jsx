@@ -19,7 +19,7 @@ function App() {
           <Route path="/detail" element={<Furniture />} />
           <Route path="/PageConnexion" element={<UserConnexion />} />
           <Route path="/Cart" element={<Cart />} />
-          <Route path="/product" element={<PagePrincipal />} />
+          <Route path="/" element={<PagePrincipal />} />
 
           {/* <Route  path="/Chaise" element={<ShopCategory category="chaise" /> } />
       <Route  path="/Table" element={<ShopCategory category="Table" /> } />
