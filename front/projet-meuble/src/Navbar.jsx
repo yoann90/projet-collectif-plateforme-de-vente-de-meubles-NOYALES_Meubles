@@ -11,7 +11,7 @@ function Navbar() {
         <div className="nav-bar">
           <ul className="nav-item">
             <li>
-              <Link to="/Product">Product</Link>
+              <Link to="/">Product</Link>
             </li>
             <div className="search-bar">
               <label htmlFor="search-bar">
