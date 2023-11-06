@@ -10,7 +10,7 @@ import UserConnexion from './PageConnexion/page_connexion';
 
 import PagePrincipal from "./PagePrincipal/PagePrincipal.jsx";
 import Navbar from "./Navbar";
-import Cart from "./Cart";
+import Cart from "./Panier/panier.jsx";
 import TopButton  from "./TopButton"
 import ShopCategory from "./ShopCategory";
 

@@ -7,7 +7,7 @@
 } */
 body {
     margin: 0;
-    font-family: ;
+    /* font-family: ; */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     height: 50vh;
@@ -182,7 +182,7 @@ code {
 
 }
 
-@media screen and (min-width: 780px) {
+/* @media screen and (min-width: 780px) {
 margin: auto;
 padding: auto;
 width: 90%;
@@ -192,4 +192,4 @@ width: 90%;
 margin: auto;
 padding: auto;
 width: 10%;
-}
+} */

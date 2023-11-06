@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from "react-router-dom"
-
+import * as icon_panier from "../images/chariot.png"
 
 
 function Navbar() {
@@ -10,8 +10,7 @@ function Navbar() {
           <div className="nav-bar">
             <ul className="nav-item">
               <li>
-              <Link to="/Product">Product</Link>
-               
+                <Link to="/Product">Product</Link>
               </li>
               <div className="search-bar">
                 <label htmlFor="search-bar">search Products</label>
@@ -24,13 +23,13 @@ function Navbar() {
                 />
               </div>
               <li>
-                
                 <Link to="/PageConnexion">Registration/Login</Link>
-                
               </li>
               <li>
-              <Link to="/cart">Cart</Link>
-                
+                {/* <a href="/cart" img src={icon_panier}></a> */}
+                {/* <Link to="/cart"><icon_panier /></Link> */}
+                <Link to="/cart">Cart</Link>
+
               </li>
             </ul>
           </div>
