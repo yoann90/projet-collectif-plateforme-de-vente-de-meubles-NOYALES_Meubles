@@ -4,7 +4,7 @@ import meuble from "../../../images/70s Italian Chrome Table Lamp - iD Lights.jp
 import "../PageDetail.css"
 import table from "../../../images/Table basse _G3.jpeg";
 import lampe from "../../../images/(3).jpeg"
-import chaise from "../../../images/Chaise de Salle à Manger.jpeg"
+import chaise from "../../../images/Chaise de Salle à Manger.jpeg";
 import { Navigate } from "react-router-dom";
 import bgdetail from "./bgdetail.jpeg"
 
