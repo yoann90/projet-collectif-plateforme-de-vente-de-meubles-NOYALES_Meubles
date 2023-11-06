@@ -1,5 +1,4 @@
 import "./PagePrincipal.css";
-
 import meuble from "../../images/canapés-colorés.jpeg";
 import accueil2 from "../../images/accueil2.jpg";
 import accueil3 from "../../images/accueil3.jpg";
@@ -8,14 +7,9 @@ import chaise2 from "../../images/Chaise de Salle à Manger.jpeg";
 import cartItem from "../../images/flashbak.webp";
 import cartItem2 from "../../images/AKBLOG-2.webp";
 import cartItem3 from "../../images/Memphis-Design.webp";
-// import data-product from "";
 import { Link } from "react-router-dom";
-import React, { useState } from "react";
-
-// import React from 'react'
 
 function PagePrincipal() {
-
   return (
     <>
       <header>
@@ -70,19 +64,12 @@ function PagePrincipal() {
                 $20.00 <strike>$40.00</strike>
               </p>
               <div className="link-detail">
-                {/* <Link to="/PageDetail">See more</Link> */}
                 <Link to="/detail">See more</Link>
-                {/* <a href="">See more</a> */}
-                <Link to="/Cart" onClick={()=>{
-
-                }}>Add to cart</Link>
-            
-                
-                {/* <a href="">Add to cart</a> */}
+                <Link to="/Cart">Add to cart</Link>
               </div>
               <div className="middle">
                 <div className="seeMore">
-                  <a href="">See more</a>
+                  <Link to="/detail">See more</Link>
                 </div>
               </div>
               <div className="badge-overlay">
@@ -96,12 +83,12 @@ function PagePrincipal() {
               </a>
               <p>$40.00</p>
               <div className="link-detail">
-                <a href="">See more</a>
-                <a href="">Add to cart</a>
+                <Link to="/detail">See more</Link>
+                <Link to="/Cart">Add to cart</Link>
               </div>
               <div className="middle">
                 <div className="seeMore">
-                  <a href="">See more</a>
+                  <Link to="/detail">See more</Link>
                 </div>
               </div>
             </div>
@@ -112,12 +99,12 @@ function PagePrincipal() {
               </a>
               <p>$40.00</p>
               <div className="link-detail">
-                <a href="">See more</a>
-                <a href="">Add to cart</a>
+                <Link to="/detail">See more</Link>
+                <Link to="/Cart">Add to cart</Link>
               </div>
               <div className="middle">
                 <div className="seeMore">
-                  <a href="">See more</a>
+                  <Link to="/detail">See more</Link>
                 </div>
               </div>
             </div>
@@ -130,12 +117,12 @@ function PagePrincipal() {
                 $10.00 <strike>$40.00</strike>
               </p>
               <div className="link-detail">
-                <a href="">See more</a>
-                <a href="">Add to cart</a>
+                <Link to="/detail">See more</Link>
+                <Link to="/Cart">Add to cart</Link>
               </div>
               <div className="middle">
                 <div className="seeMore">
-                  <a href="">See more</a>
+                  <Link to="/detail">See more</Link>
                 </div>
               </div>
               <div className="badge-overlay">
@@ -149,12 +136,12 @@ function PagePrincipal() {
               </a>
               <p>$40.00</p>
               <div className="link-detail">
-                <a href="">See more</a>
-                <a href="">Add to cart</a>
+                <Link to="/detail">See more</Link>
+                <Link to="/Cart">Add to cart</Link>
               </div>
               <div className="middle">
                 <div className="seeMore">
-                  <a href="">See more</a>
+                  <Link to="/detail">See more</Link>
                 </div>
               </div>
             </div>
@@ -165,12 +152,12 @@ function PagePrincipal() {
               </a>
               <p>$40.00 </p>
               <div className="link-detail">
-                <a href="">See more</a>
-                <a href="">Add to cart</a>
+                <Link to="/detail">See more</Link>
+                <Link to="/Cart">Add to cart</Link>
               </div>
               <div className="middle">
                 <div className="seeMore">
-                  <a href="">See more</a>
+                  <Link to="/detail">See more</Link>
                 </div>
               </div>
             </div>
@@ -226,30 +213,21 @@ function PagePrincipal() {
           <ul>
             <li>
               <Link to="/product">All</Link>
-              {/* <a href="">All</a> */}
             </li>
             <li>
               <Link to="/product">Chaise</Link>
-              {/* <a href="">Chaise</a> */}
             </li>
             <li>
-              <Link to="/product">Table</Link>
-              {/* <a href="">Table</a> */}
+              <Link to="/product">Table</Link>{" "}
             </li>
             <li>
               <Link to="/product">Lampe</Link>
-
-              {/* <a href="">Lampe</a> */}
             </li>
             <li>
               <Link to="/product">Sofa</Link>
-
-              {/* <a href="">Sofa</a> */}
             </li>
             <li>
               <Link to="/product">Fauteuil</Link>
-
-              {/* <a href="">Fauteuil</a> */}
             </li>
           </ul>
           <div className="img-box">
@@ -262,12 +240,12 @@ function PagePrincipal() {
                 $10.00 <strike>$40.00</strike>
               </p>
               <div className="link-detail">
-                <a href="">See more</a>
-                <a href="">Add to cart</a>
+                <Link to="/detail">See more</Link>
+                <Link to="/Cart">Add to cart</Link>
               </div>
               <div className="middle">
                 <div className="seeMore">
-                  <a href="">See more</a>
+                  <Link to="/detail">See more</Link>
                 </div>
               </div>
               <div className="badge-overlay">
@@ -281,12 +259,12 @@ function PagePrincipal() {
               </a>
               <p>$40.00</p>
               <div className="link-detail">
-                <a href="">See more</a>
-                <a href="">Add to cart</a>
+                <Link to="/detail">See more</Link>
+                <Link to="/Cart">Add to cart</Link>
               </div>
               <div className="middle">
                 <div className="seeMore">
-                  <a href="">See more</a>
+                  <Link to="/detail">See more</Link>
                 </div>
               </div>
             </div>
@@ -297,12 +275,12 @@ function PagePrincipal() {
               </a>
               <p>$40.00</p>
               <div className="link-detail">
-                <a href="">See more</a>
-                <a href="">Add to cart</a>
+                <Link to="/detail">See more</Link>
+                <Link to="/Cart">Add to cart</Link>
               </div>
               <div className="middle">
                 <div className="seeMore">
-                  <a href="">See more</a>
+                  <Link to="/detail">See more</Link>
                 </div>
               </div>
             </div>
@@ -313,12 +291,12 @@ function PagePrincipal() {
               </a>
               <p>$40.00</p>
               <div className="link-detail">
-                <a href="">See more</a>
-                <a href="">Add to cart</a>
+                <Link to="/detail">See more</Link>
+                <Link to="/Cart">Add to cart</Link>
               </div>
               <div className="middle">
                 <div className="seeMore">
-                  <a href="">See more</a>
+                  <Link to="/detail">See more</Link>
                 </div>
               </div>
             </div>
@@ -331,12 +309,12 @@ function PagePrincipal() {
               </a>
               <p>$40.00</p>
               <div className="link-detail">
-                <a href="">See more</a>
-                <a href="">Add to cart</a>
+                <Link to="/detail">See more</Link>
+                <Link to="/Cart">Add to cart</Link>
               </div>
               <div className="middle">
                 <div className="seeMore">
-                  <a href="">See more</a>
+                  <Link to="/detail">See more</Link>
                 </div>
               </div>
             </div>
@@ -347,12 +325,12 @@ function PagePrincipal() {
               </a>
               <p>$40.00</p>
               <div className="link-detail">
-                <a href="">See more</a>
-                <a href="">Add to cart</a>
+                <Link to="/detail">See more</Link>
+                <Link to="/Cart">Add to cart</Link>
               </div>
               <div className="middle">
                 <div className="seeMore">
-                  <a href="">See more</a>
+                  <Link to="/detail">See more</Link>
                 </div>
               </div>
             </div>
@@ -363,12 +341,12 @@ function PagePrincipal() {
               </a>
               <p>$40.00</p>
               <div className="link-detail">
-                <a href="">See more</a>
-                <a href="">Add to cart</a>
+                <Link to="/detail">See more</Link>
+                <Link to="/Cart">Add to cart</Link>
               </div>
               <div className="middle">
                 <div className="seeMore">
-                  <a href="">See more</a>
+                  <Link to="/detail">See more</Link>
                 </div>
               </div>
             </div>
@@ -381,12 +359,12 @@ function PagePrincipal() {
                 $30.00 <strike>$40.00</strike>
               </p>
               <div className="link-detail">
-                <a href="">See more</a>
-                <a href="">Add to cart</a>
+                <Link to="/detail">See more</Link>
+                <Link to="/Cart">Add to cart</Link>
               </div>
               <div className="middle">
                 <div className="seeMore">
-                  <a href="">See more</a>
+                  <Link to="/detail">See more</Link>
                 </div>
               </div>
               <div className="badge-overlay">
