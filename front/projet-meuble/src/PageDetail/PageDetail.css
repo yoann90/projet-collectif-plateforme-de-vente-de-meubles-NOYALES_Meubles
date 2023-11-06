@@ -73,3 +73,11 @@ height:240px;
 align-items: center;
 
 }
+
+.backgroundimg{
+min-height: 100vh;
+background-image: url('./components/scarlett.jpeg');
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
+}

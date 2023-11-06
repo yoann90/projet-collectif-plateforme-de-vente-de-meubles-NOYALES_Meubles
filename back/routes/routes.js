@@ -31,8 +31,8 @@ router.get('/get-AllUser/',GetAllUser)
 router.delete('/delete-user/:id', DeleteUser)
 // Cette route HTTP DELETE permet de supprimer un produit en fonction de son identifiant.
 router.delete('/delete-Product/:id',DeleteProduct)
-
-router.put('/edit/:id', UpdateProduct)
+// cette route permet de mettre à jour un produit spécifique en utilisant une demande HTTP de type "PUT". Elle s'attend à recevoir trois fichiers image et un identifiant de produit dans l'URL, et elle utilise la fonction UpdateProduct pour effectuer la mise à jour dans la base de données.
+router.put('/edit/:id',uploadImage.array('img',3),UpdateProduct)
 
 router.get('/test',authenticateJWT,test)
 

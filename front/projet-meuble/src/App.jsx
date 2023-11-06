@@ -1,7 +1,7 @@
 import "./App.css";
-import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Furniture from "./PageDetail/components/PageDetail";
+import UserConnexion from './PageConnexion/page_connexion';
 
 
 
@@ -19,8 +19,10 @@ import ShopCategory from "./ShopCategory";
 
 
 function App() {
-   return (
+  return (
     <>
+   
+    
     <BrowserRouter>
     <Navbar />
     <TopButton />
@@ -31,7 +33,7 @@ function App() {
     
       
       <Route path="/detail" element={< Furniture />} />
-      {/* <Route path="/PageConnexion" element={< PageConnexion />} /> */}
+      <Route path="/PageConnexion" element={  <UserConnexion />} />
        {/* <Route path="/product" element={<Produit /> } >
        <Route path=":productId" element={<Produit /> } />
         </Route> */}
@@ -47,7 +49,7 @@ function App() {
       </Routes>
     </BrowserRouter>
     </>
-  )
+  );
 }
 
 export default App;
