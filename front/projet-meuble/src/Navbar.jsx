@@ -1,5 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { BsCart4 } from "react-icons/bs";
+import { PiMagnifyingGlassDuotone } from "react-icons/pi";
+import { BsFillPersonFill } from "react-icons/bs";
 
 function Navbar() {
   return (
@@ -11,7 +14,9 @@ function Navbar() {
               <Link to="/Product">Product</Link>
             </li>
             <div className="search-bar">
-              <label htmlFor="search-bar">search Products</label>
+              <label htmlFor="search-bar">
+                <PiMagnifyingGlassDuotone />
+              </label>
               <input
                 type="search"
                 name="search-bar"
@@ -24,7 +29,12 @@ function Navbar() {
               <Link to="/PageConnexion">Registration/Login</Link>
             </li>
             <li>
-              <Link to="/cart">Cart</Link>
+              <Link to="/cart">
+                <BsCart4 />
+              </Link>
+            </li>
+            <li>
+              <Link to="/Admin"><BsFillPersonFill /></Link>
             </li>
           </ul>
         </div>
