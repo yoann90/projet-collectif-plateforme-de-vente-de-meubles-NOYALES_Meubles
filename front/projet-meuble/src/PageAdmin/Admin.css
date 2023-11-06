@@ -1,0 +1,101 @@
+.admin-page {
+    padding: 20px;
+}
+.admin-title {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+.admin-table {
+    width: 100px;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+.admin-table th {
+    background-color: #F2F2F2;
+    padding: 10px;
+    text-align: left;
+}
+.admin-table tr {
+    border-bottom: 1px solid #ccc;
+}
+.admin-table td {
+    padding: 10px;
+    text-align: left;
+}
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.edit-button {
+    background-color: #CC551F;
+    color: #F2F2F2;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.delete-button {
+    background-color: #CC551F;
+    color: #F2F2F2;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.add-title {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.add-photos-button {
+    background-color: #CC551F;
+    color: #F2F2F2;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.add-form {
+    display: flex;
+    flex-wrap: wrap;
+}
+.add-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #CC551F
+}
+.add-select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #CC551F
+}
+.color-option {
+    display: flex;
+    flex-wrap: wrap;
+}
+.color-square {
+    width: 20%;
+    height: 20%;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #F2F2F2;
+}
+.add-article-button {
+    background-color: #CC551F;
+    color: #F2F2F2;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+

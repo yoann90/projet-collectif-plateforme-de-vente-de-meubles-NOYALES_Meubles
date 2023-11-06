@@ -6,12 +6,12 @@ import PagePrincipal from "./PagePrincipal/PagePrincipal.jsx";
 import Navbar from "./Navbar";
 import Cart from "./Cart";
 import TopButton from "./TopButton";
+import AdminPage from "./PageAdmin/Admin.jsx"
 // import ShopCategory from "./ShopCategory";
 
 function App() {
   return (
     <>
-
       <BrowserRouter>
         <Navbar />
         <TopButton />
@@ -20,6 +20,7 @@ function App() {
           <Route path="/PageConnexion" element={<UserConnexion />} />
           <Route path="/Cart" element={<Cart />} />
           <Route path="/" element={<PagePrincipal />} />
+          <Route path="/Admin" element={<AdminPage />} />
 
           {/* <Route  path="/Chaise" element={<ShopCategory category="chaise" /> } />
       <Route  path="/Table" element={<ShopCategory category="Table" /> } />
