@@ -8,7 +8,7 @@ const multer = require("multer");
 const fileStorage = multer.diskStorage({
     destination:'images',
     filename:(req,file,cb)=>{
-        cb(null, file.fieldname + '_' + Date.now()+path.extname(file.originalname));
+        cb(null, file.originalname);
     }
 })
 
@@ -19,7 +19,7 @@ const uploadImage= multer({
         fileSize:1000000
     },
     fileFilter(req,file,cb){
-        if(!file.originalname.match(/\.(png|jpg)$/)){
+        if(!file.originalname.match(/\.(png|jpg|jpeg)$/)){
             return cb(new Error("Please upload un jpg ou png batard"));
         }
         cb(undefined, true);

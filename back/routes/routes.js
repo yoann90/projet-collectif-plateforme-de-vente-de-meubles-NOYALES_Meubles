@@ -12,7 +12,7 @@ const {authenticateJWT} = require("../middleware/auth.js")
 // Cette route HTTP GET permet de récupérer un produit spécifique en fonction de son identifiant.
 router.get('/get-OneProduct/:id',GetOneProduct)
 // Cette route HTTP GET permet de récupérer la liste de tous les produits.
-router.get('/get-AllProduct/',GetAllProduct)
+router.get('/get-AllProduct',GetAllProduct)
 // Cette route HTTP POST permet d'ajouter un nouveau produit, et elle utilise le middleware Multer (uploadImage) pour gérer le téléchargement d'images.
 router.post('/add-Product',uploadImage.array('img',3),AddProduct)
 

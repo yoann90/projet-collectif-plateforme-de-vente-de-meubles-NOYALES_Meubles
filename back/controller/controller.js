@@ -39,13 +39,13 @@ exports.AddProduct = async (req, res) => {
       matiere: req.body.matiere,
       img: [
         {
-          img1: { src: req.files[0].path, alt: req.files[0].originalname },
+          img1: { src: req.files[0].originalname, alt: req.files[0].originalname },
           img2: {
-            src: req.files[1].path,
+            src: req.files[1].originalname,
             alt: req.files[1].originalname,
           },
           img3: {
-            src: req.files[2].path,
+            src: req.files[2].originalname,
             alt: req.files[2].originalname,
           },
         },
@@ -206,13 +206,13 @@ try {
         matiere: req.body.matiere,
         img: [
           {
-            img1: { src: req.files[0].path, alt: req.files[0].originalname },
+            img1: { src: req.files[0].originalname, alt: req.files[0].originalname },
             img2: {
-              src: req.files[1].path,
+              src: req.files[1].originalname,
               alt: req.files[1].originalname,
             },
             img3: {
-              src: req.files[2].path,
+              src: req.files[2].originalname,
               alt: req.files[2].originalname,
             },
           },

@@ -9,8 +9,8 @@ const productsSchema = mongoose.Schema({
         largeur : {type: Number ,required:false},
         hauteur : {type: Number ,required:false},
     }],
-    couleur : {type:String ,required:true},
-    matiere : {type:String ,required:true},
+    couleur : {type:String ,required:false},
+    matiere : {type:String ,required:false},
     img :[{
         img1:{ src :{type:String ,required :true},
                 alt :{type:String,required :false},},
