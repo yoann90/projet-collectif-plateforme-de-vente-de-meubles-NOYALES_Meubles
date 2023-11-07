@@ -4,6 +4,7 @@ import cadenas_icon from "../../images/cadenas.png";
 import utilisateur_icon from "../../images/utilisateur.png";
 import email_icon from "../../images/email.png";
 import fond from "../../images/salonconnexionjpg.jpg";
+import { Link } from "react-router-dom";
 
 function UserConnexion() {
 
@@ -11,7 +12,7 @@ function UserConnexion() {
   return (
     <>
       <div className="pageConnexion">
-        <img src={fond} alt="" srcset="" />
+        <img src={fond} alt="" srcSet="" />
 
         <div className="container">
           <div className="header">
@@ -24,7 +25,7 @@ function UserConnexion() {
             ) : (
               <div className="input-champs-infos-indiv">
                 <div className="img-utilisateur">
-                  <img src={utilisateur_icon} alt="" srcset="" />
+                  <img src={utilisateur_icon} alt="" srcSet="" />
                   <input type="text" placeholder="Nom d'utilisateur" />
                 </div>
               </div>
@@ -32,13 +33,13 @@ function UserConnexion() {
 
             <div className="input-champs-infos-indiv">
               <div className="img-email">
-                <img src={email_icon} alt="" srcset="" />
+                <img src={email_icon} alt="" srcSet="" />
                 <input type="email" placeholder="Email" />
               </div>
             </div>
             <div className="input-champs-infos-indiv">
               <div className="img-cadenas">
-                <img src={cadenas_icon} alt="" srcset="" />
+                <img src={cadenas_icon} alt="" srcSet="" />
                 <input type="password" placeholder="Mot de passe" />
               </div>
             </div>
@@ -49,8 +50,10 @@ function UserConnexion() {
           ) : (
             <div className="forgot-password">
               Mot de passe oublié ?<span>Clique ici !</span>
+             
             </div>
           )}
+         
           <div className="submit-container">
             <div
               className={action === "Se connecter" ? "submit gray" : "submit"}
@@ -62,12 +65,14 @@ function UserConnexion() {
               Se connecter
             </div>
             <div
-              className={action === "S'inscrire" ? "submit gray" : "submit"}
-              onClick={() => {
-                setAction("S'inscrire");
-              }}
+              // className={action === "S'inscrire" ? "submit gray" : "submit"}
+              // onClick={() => {
+              //   setAction("S'inscrire");
+              // }}
+              
             >
-              S'inscrire
+              <Link to="/register">inscrire</Link>
+             
             </div>
           </div>
         </div>
