@@ -5,12 +5,13 @@ import utilisateur_icon from "../../images/utilisateur.png";
 import email_icon from "../../images/email.png";
 import fond from "../../images/salonconnexionjpg.jpg";
 import React, { useState } from "react";
+import axios from "axios";
 
 
 
 function Register() {
 
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] = React.useState({
         firstname: "",
         lastname: "",
         login: "",
@@ -28,7 +29,7 @@ function Register() {
       const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-          const response = await axios.post(`http://localhost:3003/login`, formData);
+          const response = await axios.post(`http://localhost:3003/register`, formData);
           console.log("User connecté:", response.data);
         } catch (error) {
           console.error("error", error);
