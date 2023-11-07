@@ -5,6 +5,7 @@ import utilisateur_icon from "../../images/utilisateur.png";
 import email_icon from "../../images/email.png";
 import fond from "../../images/salonconnexionjpg.jpg";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 function UserConnexion() {
   const [formData, setFormData] = React.useState({
@@ -27,7 +28,7 @@ function UserConnexion() {
       console.error("error", error);
     }
   }; 
-  const [action, setAction] = React.useState("Se connecter");
+
   return (
     <>
      <form onSubmit={handleSubmit}>
@@ -36,35 +37,26 @@ function UserConnexion() {
 
         <div className="container">
           <div className="header">
-            <div className="text">{action}</div>
+          
             <div className="underline"></div>
           </div>
           <div className="inputs-Champs-infos-ensemble">
-            {action === "Se connecter" ? (
-              <div></div>
-            ) : (
               <div className="input-champs-infos-indiv">
                 <div className="img-utilisateur">
                   <img src={utilisateur_icon} alt="" srcSet="" />
-                  <input type="text" placeholder="Nom d'utilisateur" />
+                  <input type="text" placeholder="Nom d'utilisateur"
+                   name="login"
+                  value={formData.login}
+                  onChange={handleChange}
+                  required />
                 </div>
-              </div>
-            )}
-
-            <div className="input-champs-infos-indiv">
-              <div className="img-email">
-                <img src={email_icon} alt="" srcSet="" />
-                <input type="email" placeholder="Email"
-                 value={formData.email}
-                 onChange={handleChange}
-                 required />
-              </div>
             </div>
             <div className="input-champs-infos-indiv">
               <div className="img-cadenas">
                 <img src={cadenas_icon} alt="" srcSet="" />
                 <input type="password" 
-                placeholder="Mot de passe"
+                name="password"
+                placeholder="g"
                 value={formData.password}
                 onChange={handleChange}
                 required />
@@ -72,21 +64,15 @@ function UserConnexion() {
             </div>
           </div>
 
-          {action === "S'incrirer" ? (
-            <div></div>
-          ) : (
+         
             <div className="forgot-password">
               Mot de passe oublié ?<span>Clique ici !</span>
              
             </div>
-          )}
          
           <div className="submit-container">
-            <div
-              className={action === "Se connecter" ? "submit gray" : "submit"}
-              onClick={() => {
-                setAction("Se connecter")}}>
-              
+            <button>login</button>
+          
               Se connecter
             </div>
             <div
@@ -100,7 +86,7 @@ function UserConnexion() {
              
             </div>
           </div>
-        </div>
+       
       </div>
       </form>
     </>

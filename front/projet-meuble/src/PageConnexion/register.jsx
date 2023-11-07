@@ -12,8 +12,8 @@ import axios from "axios";
 function Register() {
 
     const [formData, setFormData] = React.useState({
-        firstname: "",
         lastname: "",
+        firstname: "",
         login: "",
         email: "",
         password: "",
@@ -36,69 +36,91 @@ function Register() {
         }
       }; 
 
-  const [action, setAction] = React.useState("Inscription");
   return (
     <>
-      <form action="">
+      <form onSubmit={handleSubmit}>
         <div className="pageConnexion">
           <img src={fond} alt="" srcSet="" />
 
           <div className="container">
             <div className="header">
-              <div className="text">{action}</div>
+            
               <div className="underline"></div>
             </div>
             <div className="inputs-Champs-infos-ensemble">
-              {action === "Se connecter" ? (
-                <div></div>
-              ) : (
+
                 <div className="input-champs-infos-indiv">
                   <div className="img-utilisateur">
                     <label htmlFor="">
                       <img src={utilisateur_icon} alt="" srcSet="" />
-                      <input type="text" placeholder="Nom" />
+                      <input type="text" 
+                      name="lastname"
+                      placeholder="Nom"
+                      value={formData.lastname}
+                    onChange={handleChange}
+                    required/>
                     </label>
                   </div>
                 </div>
-              )}
               <div className="input-champs-infos-indiv">
                 <div className="img-utilisateur">
                   <label htmlFor="">
                     <img src={utilisateur_icon} alt="" srcSet="" />
-                    <input type="text" placeholder="Prénom" />
+                    <input type="text" 
+                    placeholder="Prénom"
+                    name="firstname"
+                    value={formData.firstname}
+                  onChange={handleChange}
+                  required/>
                   </label>
                 </div>
               </div>
-
+              <div className="input-champs-infos-indiv">
+                <div className="img-utilisateur">
+                  <label htmlFor="">
+                    <img src={utilisateur_icon} alt="" srcSet="" />
+                    <input type="text" 
+                    placeholder="login"
+                    name="login"
+                    value={formData.login}
+                  onChange={handleChange}
+                  required  />
+                  </label>
+                  </div>
               <div className="input-champs-infos-indiv">
                 <div className="img-email">
                   <label htmlFor="">
                     <img src={email_icon} alt="" srcSet="" />
-                    <input type="email" placeholder="Email" />
+                    <input type="email" 
+                    name="email"
+                    placeholder="Email"
+                    value={formData.email}
+                onChange={handleChange}
+                required  />
                   </label>
                 </div>
+              </div>
               </div>
               <div className="input-champs-infos-indiv">
                 <div className="img-cadenas">
                   <label htmlFor="">
                     <img src={cadenas_icon} alt="" />
-                    <input type="password" placeholder="Mot de passe" />
+                    <input type="password" 
+                    name="password"
+                    placeholder="Mot de passe"
+                    value={formData.password}
+                    onChange={handleChange}
+                    required  />
                   </label>
                 </div>
               </div>
             </div>
 
             <div className="submit-container">
-              <div className="sub2">
-                <div
-                  className={action === "S'inscrire" ? "submit gray" : "submit"}
-                  onClick={() => {
-                    setAction("S'inscrire");
-                  }}
-                >
+                <button>s'inscrire</button>
                   S'inscrire
-                </div>
-              </div>
+             
+    
             </div>
           </div>
         </div>
