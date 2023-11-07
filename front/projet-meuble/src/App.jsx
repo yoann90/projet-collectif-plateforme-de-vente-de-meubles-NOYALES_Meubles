@@ -2,6 +2,7 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Furniture from "./PageDetail/components/PageDetail";
 import UserConnexion from "./PageConnexion/page_connexion";
+import Register from "./PageConnexion/register";
 import PagePrincipal from "./PagePrincipal/PagePrincipal.jsx";
 import Navbar from "./Navbar";
 import Cart from "./Cart";
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route path="/detail/:id" element={<Furniture />} />
           <Route path="/PageConnexion" element={<UserConnexion />} />
+          <Route path="/Register" element={<Register />} />
           <Route path="/Cart" element={<Cart />} />
           <Route path="/" element={<PagePrincipal />} />
           <Route path="/Admin" element={<AdminPage />} />

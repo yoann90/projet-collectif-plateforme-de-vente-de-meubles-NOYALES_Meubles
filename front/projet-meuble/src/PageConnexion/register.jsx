@@ -1,11 +1,14 @@
-import React from "react";
+// import React from "react";
 import "./page_connexion.css";
 import cadenas_icon from "../../images/cadenas.png";
 import utilisateur_icon from "../../images/utilisateur.png";
 import email_icon from "../../images/email.png";
 import fond from "../../images/salonconnexionjpg.jpg";
+import React, { useState } from "react";
 
-function UserConnexion() {
+
+
+function Register() {
 
     const [formData, setFormData] = useState({
         firstname: "",
@@ -32,11 +35,12 @@ function UserConnexion() {
         }
       }; 
 
-  //const [action, setAction] = React.useState("Se connecter");
+  const [action, setAction] = React.useState("nscription");
   return (
     <>
+    <form action="">
       <div className="pageConnexion">
-        <img src={fond} alt="" srcset="" />
+        <img src={fond} alt="" srcSet="" />
 
         <div className="container">
           <div className="header">
@@ -49,22 +53,36 @@ function UserConnexion() {
             ) : (
               <div className="input-champs-infos-indiv">
                 <div className="img-utilisateur">
-                  <img src={utilisateur_icon} alt="" srcset="" />
-                  <input type="text" placeholder="Nom d'utilisateur" />
+                  <label htmlFor="">
+                  <img src={utilisateur_icon} alt="" srcSet="" />
+                  <input type="text"  placeholder="Nom"  />
+                  </label>
                 </div>
               </div>
             )}
+             <div className="input-champs-infos-indiv">
+                <div className="img-utilisateur">
+                  <label htmlFor="">
+                  <img src={utilisateur_icon} alt="" srcSet="" />
+                  <input type="text" placeholder="Prénom" />
+                  </label>
+                </div>
+              </div>
 
             <div className="input-champs-infos-indiv">
               <div className="img-email">
-                <img src={email_icon} alt="" srcset="" />
+                <label htmlFor="">
+                <img src={email_icon} alt="" srcSet="" />
                 <input type="email" placeholder="Email" />
+                </label>
               </div>
             </div>
             <div className="input-champs-infos-indiv">
               <div className="img-cadenas">
-                <img src={cadenas_icon} alt="" srcset="" />
-                <input type="password" placeholder="Mot de passe" />
+                <label htmlFor="">
+                <img src={cadenas_icon} alt=""  />
+                <input type="password"  placeholder="Mot de passe" />
+                </label>
               </div>
             </div>
           </div>
@@ -77,15 +95,7 @@ function UserConnexion() {
             </div>
           )}
           <div className="submit-container">
-            <div
-              className={action === "Se connecter" ? "submit gray" : "submit"}
-              onClick={() => {
-                setAction("Se connecter");
-              }}
-            >
-              
-              Se connecter
-            </div>
+         
             <div
               className={action === "S'inscrire" ? "submit gray" : "submit"}
               onClick={() => {
@@ -97,8 +107,9 @@ function UserConnexion() {
           </div>
         </div>
       </div>
+      </form>
     </>
   );
 }
 
-export default UserConnexion;
+export default Register;
