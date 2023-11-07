@@ -24,6 +24,7 @@ function UserConnexion() {
     try {
       const response = await axios.post(`http://localhost:3003/login`, formData);
       console.log("User connecté:", response.data);
+      localStorage.setItem("token",response.data.token)
     } catch (error) {
       console.error("error", error);
     }

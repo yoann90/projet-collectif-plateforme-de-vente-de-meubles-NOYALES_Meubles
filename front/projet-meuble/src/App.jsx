@@ -9,20 +9,27 @@ import Cart from "./Cart";
 import TopButton from "./TopButton";
 import AdminPage from "./PageAdmin/Admin.jsx"
 // import ShopCategory from "./ShopCategory";
-
+const Auth = ({children}) => {
+const token = localStorage.getItem("token")
+if (!token){ 
+return <UserConnexion/>}
+console.log("ok")
+  return children
+}
 function App() {
+
   return (
     <>
       <BrowserRouter>
         <Navbar />
         <TopButton />
         <Routes>
-          <Route path="/detail/:id" element={<Furniture />} />
-          <Route path="/PageConnexion" element={<UserConnexion />} />
+          <Route path="/detail/:id" element={<Furniture />} />""
+""          <Route path="/PageConnexion" element={<UserConnexion />} />
           <Route path="/Register" element={<Register />} />
           <Route path="/Cart" element={<Cart />} />
           <Route path="/" element={<PagePrincipal />} />
-          <Route path="/Admin" element={<AdminPage />} />
+          <Route path="/Admin" element={<Auth><AdminPage /> </Auth>} />
 
           {/* <Route  path="/Chaise" element={<ShopCategory category="chaise" /> } />
       <Route  path="/Table" element={<ShopCategory category="Table" /> } />
