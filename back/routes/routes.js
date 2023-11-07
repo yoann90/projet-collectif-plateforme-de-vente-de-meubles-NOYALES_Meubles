@@ -21,6 +21,7 @@ router.post('/add-Product',uploadImage.array('img',3),AddProduct)
 
 router.post('/login',Login)
 // Cette route HTTP POST permet d'ajouter un nouvel utilisateur.
+
 router.post('/register',AddUser)
 // Cette route HTTP GET permet de récupérer un utilisateur spécifique en fonction de son identifiant.
 router.get('/get-user/:id',GetOneUser)
