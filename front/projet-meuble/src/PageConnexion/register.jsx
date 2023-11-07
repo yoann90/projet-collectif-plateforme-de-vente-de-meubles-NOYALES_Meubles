@@ -36,98 +36,72 @@ function Register() {
         }
       }; 
 
-  const [action, setAction] = React.useState("nscription");
+  const [action, setAction] = React.useState("Inscription");
   return (
     <>
-    <form onSubmit={handleSubmit}>
-      <div className="pageConnexion">
-        <img src={fond} alt="" srcSet="" />
+      <form action="">
+        <div className="pageConnexion">
+          <img src={fond} alt="" srcSet="" />
 
-        <div className="container">
-          <div className="header">
-            <div className="text">{action}</div>
-            <div className="underline"></div>
-          </div>
-          <div className="inputs-Champs-infos-ensemble">
-            {action === "Se connecter" ? (
-              <div></div>
-            ) : (
+          <div className="container">
+            <div className="header">
+              <div className="text">{action}</div>
+              <div className="underline"></div>
+            </div>
+            <div className="inputs-Champs-infos-ensemble">
+              {action === "Se connecter" ? (
+                <div></div>
+              ) : (
+                <div className="input-champs-infos-indiv">
+                  <div className="img-utilisateur">
+                    <label htmlFor="">
+                      <img src={utilisateur_icon} alt="" srcSet="" />
+                      <input type="text" placeholder="Nom" />
+                    </label>
+                  </div>
+                </div>
+              )}
               <div className="input-champs-infos-indiv">
                 <div className="img-utilisateur">
                   <label htmlFor="">
-                  <img src={utilisateur_icon} alt="" srcSet="" />
-                  <input type="text"  
-                  placeholder="Nom" 
-                  value={formData.lastname}
-                  onChange={handleChange}
-                  required 
-                  />
+                    <img src={utilisateur_icon} alt="" srcSet="" />
+                    <input type="text" placeholder="Prénom" />
                   </label>
                 </div>
               </div>
-            )}
-             <div className="input-champs-infos-indiv">
-                <div className="img-utilisateur">
+
+              <div className="input-champs-infos-indiv">
+                <div className="img-email">
                   <label htmlFor="">
-                  <img src={utilisateur_icon} alt="" srcSet="" />
-                  <input type="text" 
-                  placeholder="Prénom" 
-                  value={formData.firstname}
-                  onChange={handleChange}
-                  required 
-                  />
+                    <img src={email_icon} alt="" srcSet="" />
+                    <input type="email" placeholder="Email" />
                   </label>
                 </div>
               </div>
-
-            <div className="input-champs-infos-indiv">
-              <div className="img-email">
-                <label htmlFor="">
-                <img src={email_icon} alt="" srcSet="" />
-                <input type="email" 
-                placeholder="Email"
-                value={formData.email}
-                onChange={handleChange}
-                required 
-                />
-                </label>
+              <div className="input-champs-infos-indiv">
+                <div className="img-cadenas">
+                  <label htmlFor="">
+                    <img src={cadenas_icon} alt="" />
+                    <input type="password" placeholder="Mot de passe" />
+                  </label>
+                </div>
               </div>
             </div>
-            <div className="input-champs-infos-indiv">
-              <div className="img-cadenas">
-                <label htmlFor="">
-                <img src={cadenas_icon} alt=""  />
-                <input type="password"  
-                placeholder="passe"
-                value={formData.password}
-                onChange={handleChange}
-                required 
-                />
-                </label>
-              </div>
-            </div>
-          </div>
 
-          {action === "S'incrire" ? (
-            <div></div>
-          ) : (
-            <div className="forgot-password">
-              Mot de passe oublié ?<span>Clique ici !</span>
-            </div>
-          )}
-          <div className="submit-container">
-         
-            <div
-              className={action === "S'inscrire" ? "submit gray" : "submit"}
-              onClick={() => {
-                setAction("S'inscrire");
-              }}
-            >
-              S'inscrire
+            <div className="submit-container">
+              <div className="sub2">
+                <div
+                  className={action === "S'inscrire" ? "submit gray" : "submit"}
+                  onClick={() => {
+                    setAction("S'inscrire");
+                  }}
+                >
+                  S'inscrire
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
       </form>
     </>
   );

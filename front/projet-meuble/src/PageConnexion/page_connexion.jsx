@@ -85,9 +85,7 @@ function UserConnexion() {
             <div
               className={action === "Se connecter" ? "submit gray" : "submit"}
               onClick={() => {
-                setAction("Se connecter");
-              }}
-            >
+                setAction("Se connecter")}}>
               
               Se connecter
             </div>
@@ -98,7 +96,7 @@ function UserConnexion() {
               // }}
               
             >
-              <Link to="/register">inscrire</Link>
+              <Link  className="subscribe" to="/register">S'inscrire</Link>
              
             </div>
           </div>
