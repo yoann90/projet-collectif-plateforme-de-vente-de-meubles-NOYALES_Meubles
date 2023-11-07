@@ -88,7 +88,7 @@ return (
               
               <p>{meuble.price}</p>
               <div className="link-detail">
-                <Link to="/detail">See more</Link>
+                <Link to={`/detail/`+ meuble._id}>See more</Link>
                 <Link to="/Cart">Add to cart</Link>
               </div>
               <div className="middle">

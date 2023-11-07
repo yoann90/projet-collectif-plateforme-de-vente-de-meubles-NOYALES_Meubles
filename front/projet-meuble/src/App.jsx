@@ -16,7 +16,7 @@ function App() {
         <Navbar />
         <TopButton />
         <Routes>
-          <Route path="/detail" element={<Furniture />} />
+          <Route path="/detail/:id" element={<Furniture />} />
           <Route path="/PageConnexion" element={<UserConnexion />} />
           <Route path="/Cart" element={<Cart />} />
           <Route path="/" element={<PagePrincipal />} />
