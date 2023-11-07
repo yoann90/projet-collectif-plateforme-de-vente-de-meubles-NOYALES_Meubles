@@ -82,18 +82,18 @@ return (
           { data.map((meuble,i) => 
   <div className="img-card" key={i}>
 
-      <img src= {`http://localhost:3003/`+ meuble.img[0].img1.alt} alt="" />
+      <img src= {`http://localhost:3003/`+ meuble.img.img1.src} alt="" />
               
                 <h3>{meuble.title}</h3>
               
               <p>{meuble.price}</p>
               <div className="link-detail">
-                <Link to={`/detail/`+ meuble._id}>See more</Link>
+                <Link to={"/detail/"+ meuble._id}>See more</Link>
                 <Link to="/Cart">Add to cart</Link>
               </div>
               <div className="middle">
                 <div className="seeMore">
-                  <Link to="/detail">See more</Link>
+                  <Link to={"/detail/"+ meuble._id}>See more</Link>
                 </div>
               </div>
             </div>)}

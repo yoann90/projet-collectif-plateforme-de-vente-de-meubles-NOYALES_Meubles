@@ -1,37 +1,62 @@
-import React, {Component} from "react";
-import Recap from './PageDetailRecap'; 
-import meuble from "../../../images/70s Italian Chrome Table Lamp - iD Lights.jpeg";
 import "../PageDetail.css"
-import table from "../../../images/Table basse _G3.jpeg";
-import lampe from "../../../images/(3).jpeg"
-import chaise from "../../../images/Chaise de Salle à Manger.jpeg";
-import { Navigate } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import bgdetail from "./bgdetail.jpeg"
+import axios from "axios"
+import { Link } from "react-router-dom";
+import React from 'react';
 
 
-class Furniture extends Component {
-render(){
 
+function Furniture (){
+const [loading, setLoading] = React.useState(true)
+let [data,setData]= React.useState([]);
+    let id = useParams();
+
+    React.useEffect(() => {
+        const fetchData = async () =>{
+          setLoading(true);
+          try {
+            const {data: response} = await axios.get(`http://localhost:3003/get-OneProduct/${id.id}`);
+            setData(response);
+          } catch (error) {
+            console.error(error.message);
+          }
+          setLoading(false);
+        }
     
-return <div className="backgroundimg">
-
+        fetchData();
+      }, []);
+    
+    console.log(data)
+return (
+    <>
+    <div>
+    {loading && <div>Loading</div>}
+    {!loading && 
+(<div className="backgroundimg">
 <div className="description-box">
    
-<img src ={meuble} style={{width:"38%", borderRadius:"10px"}}/>
-<Recap  dimensions ="53x43x85" matiere = "cuir" color ="brown">1921</Recap>
-{/* <Recap dimensions ="83x43x85" matiere = "bois" color = "beige">1965 </Recap> */}
-{/* <Recap dimensions ="93x43x85" matiere = "laine" color = "dark green">1975</Recap>
-<Recap dimensions ="113x83x85" matiere ="synthétique" color="orange">1945</Recap> */}
-<div className="images">
-    <img src={table}style={{borderRadius:"10px"}} />
-    <img src={lampe} style={{borderRadius:"10px"}}/>
-    <img src={chaise} style={{borderRadius:"10px"}}/>
-     </div>
-</div>
 
+<div className='detail-box'>
+<h1>Noyales Meubles</h1> 
+<div className='paragraphs'>
+<p>Type: </p>
+<p>Couleur: {data.couleur}</p>
+<p>Matière: {data.matiere} </p>
+<p>Dimensions: {data.dimension.longeur}</p>
+<p>{data.dimension.largeur}</p>
+<p>{data.dimension.hauteur}</p>
 </div>
-}
-
-}
+<div className='shop-cart'>
+<Link  className='btn' to="/Cart">Shop here!</Link>
+</div>
+</div>
+<img src={`http://localhost:3003/`+ data.img.img1.src} style={{borderRadius:"10px"}} />
+ <img src={`http://localhost:3003/`+ data.img.img2.src} style={{borderRadius:"10px"}} />
+    <img src={`http://localhost:3003/`+ data.img.img3.src} style={{borderRadius:"10px"}}/>
+</div>
+</div>)}
+</div>
+</>)}
 
 export default Furniture;
