@@ -1,28 +1,28 @@
 .description-box{
 
   display:flex;
-  padding:10px;
-  margin:5px;
-  width:45%;
-  background-color: #EFF2F1;
-  border: solid #dbdbdb;
-  border-width: thick;
-  border-radius: 10px;
-  justify-content: space-between;
-  padding:5px;
+  position:absolute;
+  width:auto;
+  gap: 10px;
+  left: 350px;
+  margin-top: 90px;
+  box-shadow:#dbdbdb 0 0 0 ;
 }
 
 
 .detail-box{
 
-   
+   position: absolute;
     background-color: #EFF2F1;
-    width: 300px;
+    /* width: 35%; */
     padding: 10px;
     margin: 5px auto;
     border-radius: 15px;
-
+    left:-330px;
+    height: 296px;
+    box-shadow:#cc551F  2px 1px 9px 2px;
 }
+
 
  h1{
 
@@ -40,16 +40,14 @@ margin-top: 30px;
 .btn{
     border:1px solid #cc551F;
     padding: 10px 10px;
-    /* height:55px;
-    width:55px; */
     background-Color:#cc551F;
     border-Radius:10px;
     transition: background-color 0.5s ease-in-out;
-    /* margin-top: 200px; */
     text-decoration: none;
-    bottom:310px;
+    bottom:10px;
     position:absolute;
     color: white;
+    right:30px;
 }
 .btn:hover{
     background-color: gray;
@@ -63,7 +61,7 @@ margin-top: 30px;
  border: solid #dbdbdb;
  border-width: thick;
  border-radius: 10px;
- height:340px;
+ height:100px;
  top:162px;
  background-color:  #EFF2F1;
  padding: 5px;
@@ -71,7 +69,7 @@ margin-top: 30px;
 }
 
 .images img{
-width:225px;
+width:100%;
 margin-top: 50px;
 height:240px;
 align-items: center;

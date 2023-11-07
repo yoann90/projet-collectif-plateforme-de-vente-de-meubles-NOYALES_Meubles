@@ -40,20 +40,22 @@ return (
 <div className='detail-box'>
 <h1>Noyales Meubles</h1> 
 <div className='paragraphs'>
-<p>Type: </p>
+<p>Type: Néant</p>
 <p>Couleur: {data.couleur}</p>
 <p>Matière: {data.matiere} </p>
 <p>Dimensions: {data.dimension.longeur}</p>
+<p>X</p>
 <p>{data.dimension.largeur}</p>
+<p>X</p>
 <p>{data.dimension.hauteur}</p>
 </div>
 <div className='shop-cart'>
 <Link  className='btn' to="/Cart">Shop here!</Link>
 </div>
 </div>
-<img src={`http://localhost:3003/`+ data.img.img1.src} style={{borderRadius:"10px"}} />
- <img src={`http://localhost:3003/`+ data.img.img2.src} style={{borderRadius:"10px"}} />
-    <img src={`http://localhost:3003/`+ data.img.img3.src} style={{borderRadius:"10px"}}/>
+<img src={`http://localhost:3003/`+ data.img.img1.src} style={{borderRadius:"10px", height:"300px", width:"300px", boxShadow:"#dbdbdb 2px 2px 3px 1px"}} />
+ <img src={`http://localhost:3003/`+ data.img.img2.src} style={{borderRadius:"10px",height:"300px", width:"300px", boxShadow:"#dbdbdb 2px 2px 3px 1px"}} />
+    <img src={`http://localhost:3003/`+ data.img.img3.src} style={{borderRadius:"10px",height:"300px", width:"300px", boxShadow:"#dbdbdb 2px 2px 3px 1px"}}/>
 </div>
 </div>)}
 </div>
