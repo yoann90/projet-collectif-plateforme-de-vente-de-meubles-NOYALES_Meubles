@@ -3,6 +3,12 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+:root{
+    --ColorOrange: rgb(246, 128, 31, 0.749);
+}
+
+
 body,
 html {
   scroll-behavior: smooth;
@@ -50,7 +56,7 @@ html {
   padding: 0 20px;
 }
 .nav-item li a:hover {
-  color: #cc551f;
+  color: var(--ColorOrange);
   text-decoration: underline;
 }
 
@@ -178,8 +184,9 @@ header img {
   transition: color 0.5s ease-in-out;
 }
 .produit-box a:hover {
-  color: #cc551f;
+color: var(--ColorOrange);
 }
+
 .img-box {
   position: relative;
   display: flex;
@@ -239,8 +246,8 @@ header img {
   font-size: calc(10px + 1vw);
   cursor: pointer;
   padding: 10px 10px;
-  border: 1px solid #cc551f;
-  background: #cc551f;
+  border: 1px solid var(--ColorOrange);
+  background: var(--ColorOrange);
   border-radius: 5px;
 }
 
@@ -284,7 +291,7 @@ header img {
   transition: color 0.5s ease-in-out;
 }
 .img-card a h3:hover {
-  color: #cc551f;
+  color: var(--ColorOrange);
 }
 .link-detail {
   position: relative;
@@ -295,9 +302,9 @@ header img {
 .link-detail a {
   text-decoration: none;
   color: white;
-  border: 1px solid #cc551f;
+  border: 1px solid var(--ColorOrange);
   border-radius: 10px;
-  background: #cc551f;
+  background: var(--ColorOrange);
   padding: 12px 15px;
   font-size: calc(5px + 1vw);
   line-height: 5px;
@@ -305,9 +312,9 @@ header img {
     border 0.5s ease-in-out;
 }
 .link-detail a:hover {
-  color: #cc551f;
+  color: var(--ColorOrange);
   background: transparent;
-  border: 1px solid #cc551f;
+  border: 1px solid var(--ColorOrange);
 }
 hr {
   width: 100%;
@@ -349,7 +356,7 @@ hr {
   transition: color 0.5s ease-in-out;
 }
 .column-item a:hover {
-  color: #cc551f;
+  color: var(--ColorOrange);
 }
 .column p {
   position: absolute;
@@ -427,8 +434,8 @@ hr {
 }
 .discount label:hover {
   color: white;
-  background: #cc551f;
-  border: #cc551f;
+  background: var(--ColorOrange);
+  border: var(--ColorOrange);
 }
 .discount input {
   padding: 15px 100px;
@@ -484,7 +491,7 @@ hr {
   transition: color 0.5s ease-in-out;
 }
 .box-produits ul li a:hover {
-  color: #cc551f;
+  color: var(--ColorOrange);
 }
 
 .pagination {
@@ -501,7 +508,7 @@ hr {
 }
 
 .pagination a.active {
-  background-color: #cc551f;
+  background-color: var(--ColorOrange);
   color: white;
   border-radius: 5px;
 }
@@ -519,7 +526,7 @@ hr {
   z-index: 99;
   border: none;
   outline: none;
-  background-color: #cc551f;
+  background-color: var(--ColorOrange);
   cursor: pointer;
   color: white;
   padding: 15px;
@@ -530,8 +537,8 @@ hr {
 
 #myBtn:hover {
   background: transparent;
-  color: #cc551f;
-  border: 1px solid #cc551f;
+  color: var(--ColorOrange);
+  border: 1px solid var(--ColorOrange);
 }
 .box-cart {
   position: relative;
@@ -544,7 +551,7 @@ hr {
 }
 .box-title {
   position: absolute;
-  background: #cc551f;
+  background: var(--ColorOrange);
 
   width: 100%;
   height: 40%;
@@ -625,7 +632,7 @@ hr {
 .add {
   position: absolute;
   display: flex;
-  background: #cc551f;
+  background: var(--ColorOrange);
   padding: 5px 30px;
   color: white;
   font-size: calc(5px + 1vw);
@@ -694,7 +701,7 @@ hr {
   position: absolute;
   display: flex;
   text-decoration: none;
-  background: #cc551f;
+  background: var(--ColorOrange);
   padding: 5px 20px;
   color: white;
   font-size: calc(10px + 1vw);
@@ -709,8 +716,8 @@ hr {
 }
 .product-total a:hover {
   background: transparent;
-  color: #cc551f;
-  border: 1px solid #cc551f;
+  color: var(--ColorOrange);
+  border: 1px solid var(--ColorOrange);
 }
 .continue {
   position: absolute;
@@ -726,13 +733,13 @@ hr {
   font-size: calc(5px + 1vw);
   font-weight: 600;
   text-decoration: none;
-  background: #cc551f;
+  background: var(--ColorOrange);
   border-radius: 25px;
   border: 1px black solid;
   transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 .continue a:hover {
   background: transparent;
-  color: #cc551f;
-  border: 1px solid #cc551f;
+  color: var(--ColorOrange);
+  border: 1px solid var(--ColorOrange);
 }
