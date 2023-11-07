@@ -28,16 +28,15 @@ exports.AddProduct = async (req, res) => {
       title: req.body.title,
       description: req.body.description,
       price: req.body.price,
-      dimension: [
+      dimension: 
         {
           longeur: req.body.longeur,
           largeur: req.body.largeur,
           hauteur: req.body.hauteur,
         },
-      ],
       couleur: req.body.couleur,
       matiere: req.body.matiere,
-      img: [
+      img: 
         {
           img1: { src: req.files[0].originalname, alt: req.files[0].originalname },
           img2: {
@@ -49,7 +48,7 @@ exports.AddProduct = async (req, res) => {
             alt: req.files[2].originalname,
           },
         },
-      ],
+    
     };
     // Ensuite, un nouveau produit est créé en utilisant le modèle Products (modèle mongoose) avec les données de l'objet product.
     let newProduct = await new Products(product);
@@ -195,16 +194,15 @@ try {
       title: req.body.title,
         description: req.body.description,
         price: req.body.price,
-        dimension: [
+        dimension: 
           {
             longeur: req.body.longeur,
             largeur: req.body.largeur,
             hauteur: req.body.hauteur,
           },
-        ],
         couleur: req.body.couleur,
         matiere: req.body.matiere,
-        img: [
+        img: 
           {
             img1: { src: req.files[0].originalname, alt: req.files[0].originalname },
             img2: {
@@ -216,7 +214,7 @@ try {
               alt: req.files[2].originalname,
             },
           },
-        ],  
+         
     }
   
     // Extrait l'identifiant du produit à mettre à jour à partir des paramètres de la requête (req.params.id), ce qui permet de spécifier quel produit doit être modifié.
