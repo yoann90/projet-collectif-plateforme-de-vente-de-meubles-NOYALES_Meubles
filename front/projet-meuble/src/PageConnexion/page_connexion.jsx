@@ -7,10 +7,30 @@ import fond from "../../images/salonconnexionjpg.jpg";
 import { Link } from "react-router-dom";
 
 function UserConnexion() {
-
+  const [formData, setFormData] = React.useState({
+    login: "",
+    password: "",
+  });
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(`http://localhost:3003/login`, formData);
+      console.log("User connecté:", response.data);
+    } catch (error) {
+      console.error("error", error);
+    }
+  }; 
   const [action, setAction] = React.useState("Se connecter");
   return (
     <>
+     <form onSubmit={handleSubmit}>
       <div className="pageConnexion">
         <img src={fond} alt="" srcSet="" />
 
@@ -34,13 +54,20 @@ function UserConnexion() {
             <div className="input-champs-infos-indiv">
               <div className="img-email">
                 <img src={email_icon} alt="" srcSet="" />
-                <input type="email" placeholder="Email" />
+                <input type="email" placeholder="Email"
+                 value={formData.email}
+                 onChange={handleChange}
+                 required />
               </div>
             </div>
             <div className="input-champs-infos-indiv">
               <div className="img-cadenas">
                 <img src={cadenas_icon} alt="" srcSet="" />
-                <input type="password" placeholder="Mot de passe" />
+                <input type="password" 
+                placeholder="Mot de passe"
+                value={formData.password}
+                onChange={handleChange}
+                required />
               </div>
             </div>
           </div>
@@ -77,6 +104,7 @@ function UserConnexion() {
           </div>
         </div>
       </div>
+      </form>
     </>
   );
 }

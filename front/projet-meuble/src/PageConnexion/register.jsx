@@ -5,12 +5,13 @@ import utilisateur_icon from "../../images/utilisateur.png";
 import email_icon from "../../images/email.png";
 import fond from "../../images/salonconnexionjpg.jpg";
 import React, { useState } from "react";
+import axios from "axios";
 
 
 
 function Register() {
 
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] = React.useState({
         firstname: "",
         lastname: "",
         login: "",
@@ -28,7 +29,7 @@ function Register() {
       const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-          const response = await axios.post(`http://localhost:3003/login`, formData);
+          const response = await axios.post(`http://localhost:3003/register`, formData);
           console.log("User connecté:", response.data);
         } catch (error) {
           console.error("error", error);
@@ -38,7 +39,7 @@ function Register() {
   const [action, setAction] = React.useState("nscription");
   return (
     <>
-    <form action="">
+    <form onSubmit={handleSubmit}>
       <div className="pageConnexion">
         <img src={fond} alt="" srcSet="" />
 
@@ -55,7 +56,12 @@ function Register() {
                 <div className="img-utilisateur">
                   <label htmlFor="">
                   <img src={utilisateur_icon} alt="" srcSet="" />
-                  <input type="text"  placeholder="Nom"  />
+                  <input type="text"  
+                  placeholder="Nom" 
+                  value={formData.lastname}
+                  onChange={handleChange}
+                  required 
+                  />
                   </label>
                 </div>
               </div>
@@ -64,7 +70,12 @@ function Register() {
                 <div className="img-utilisateur">
                   <label htmlFor="">
                   <img src={utilisateur_icon} alt="" srcSet="" />
-                  <input type="text" placeholder="Prénom" />
+                  <input type="text" 
+                  placeholder="Prénom" 
+                  value={formData.firstname}
+                  onChange={handleChange}
+                  required 
+                  />
                   </label>
                 </div>
               </div>
@@ -73,7 +84,12 @@ function Register() {
               <div className="img-email">
                 <label htmlFor="">
                 <img src={email_icon} alt="" srcSet="" />
-                <input type="email" placeholder="Email" />
+                <input type="email" 
+                placeholder="Email"
+                value={formData.email}
+                onChange={handleChange}
+                required 
+                />
                 </label>
               </div>
             </div>
@@ -81,7 +97,12 @@ function Register() {
               <div className="img-cadenas">
                 <label htmlFor="">
                 <img src={cadenas_icon} alt=""  />
-                <input type="password"  placeholder="Mot de passe" />
+                <input type="password"  
+                placeholder="passe"
+                value={formData.password}
+                onChange={handleChange}
+                required 
+                />
                 </label>
               </div>
             </div>
