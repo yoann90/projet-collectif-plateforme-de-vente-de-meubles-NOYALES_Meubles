@@ -205,7 +205,7 @@ return (
             </div>
           </div>
         </div>
-        <hr />
+        {/* <hr /> */}
         <div className="discount">
           <h2>Get 25% Off Discount Coupons</h2>
           <div className="form-subscribe">

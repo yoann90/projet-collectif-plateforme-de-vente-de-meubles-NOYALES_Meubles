@@ -31,63 +31,60 @@ function UserConnexion() {
 
   return (
     <>
-     <form onSubmit={handleSubmit}>
-      <div className="pageConnexion">
-        <img src={fond} alt="" srcSet="" />
+      <form onSubmit={handleSubmit}>
+        <div className="pageConnexion">
+          <img src={fond} alt="" srcSet="" />
 
-        <div className="container">
-          <div className="header">
-          
-            <div className="underline"></div>
-          </div>
-          <div className="inputs-Champs-infos-ensemble">
+          <div className="container">
+            <div className="header"></div>
+
+            <div className="title2">Se connecter</div>
+
+            <div className="souligner"></div>
+
+            <div className="inputs-Champs-infos-ensemble">
               <div className="input-champs-infos-indiv">
                 <div className="img-utilisateur">
                   <img src={utilisateur_icon} alt="" srcSet="" />
-                  <input type="text" placeholder="Nom d'utilisateur"
-                   name="login"
-                  value={formData.login}
-                  onChange={handleChange}
-                  required />
+                  <input
+                    type="text"
+                    placeholder="Nom d'utilisateur"
+                    name="login"
+                    value={formData.login}
+                    onChange={handleChange}
+                    required
+                  />
                 </div>
-            </div>
-            <div className="input-champs-infos-indiv">
-              <div className="img-cadenas">
-                <img src={cadenas_icon} alt="" srcSet="" />
-                <input type="password" 
-                name="password"
-                placeholder="g"
-                value={formData.password}
-                onChange={handleChange}
-                required />
+              </div>
+              <div className="input-champs-infos-indiv">
+                <div className="img-cadenas">
+                  <img src={cadenas_icon} alt="" srcSet="" />
+                  <input
+                    type="password"
+                    name="password"
+                    placeholder="Mot de passe"
+                    value={formData.password}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
               </div>
             </div>
-          </div>
 
-         
+            <button className="buttonLogin">Se connecter
+            </button>
+
             <div className="forgot-password">
               Mot de passe oublié ?<span>Clique ici !</span>
-             
             </div>
-         
-          <div className="submit-container">
-            <button>login</button>
-          
-              Se connecter
-            </div>
-            <div
-              // className={action === "S'inscrire" ? "submit gray" : "submit"}
-              // onClick={() => {
-              //   setAction("S'inscrire");
-              // }}
-              
-            >
-              <Link  className="subscribe" to="/register">S'inscrire</Link>
-             
+
+            <div className="boutons">
+              <Link className="subscribe" to="/register">
+                Pas de compte ? S'inscrire
+              </Link>
             </div>
           </div>
-       
-      </div>
+        </div>
       </form>
     </>
   );
