@@ -11,8 +11,11 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
+import Cart from "./Cart";
+
 
 function PagePrincipal() {
+
 let [data,setData]= useState([]);
 
 useEffect(()=>{
@@ -23,6 +26,12 @@ setData(requete.data)
 console.log(requete.data)}
 requestProducts()
 },[])
+
+const addItemToCart = (item) => {
+  localStorage.setItem(cartKey, JSON.stringify([...cartItems, item]));
+  setCartItems([...cartItems, item]);
+};
+
 
 // const renderListOfMeuble = (data) => {
 //   return data.map((meuble,i) => 
@@ -48,6 +57,7 @@ requestProducts()
 
 return (
     <>
+       <Cart cartItems={cartItems} addItemToCart={addItemToCart} removeItemFromCart={removeItemFromCart} />
       <header>
         <div className="gallery-item">
           <div className="container-img">
@@ -89,7 +99,7 @@ return (
               <p>{meuble.price}</p>
               <div className="link-detail">
                 <Link to={"/detail/"+ meuble._id}>See more</Link>
-                <Link to="/Cart">Add to cart</Link>
+                <button onClick={() => addItemToCart(meuble)}>Add to cart</button>
               </div>
               <div className="middle">
                 <div className="seeMore">
@@ -407,6 +417,7 @@ return (
           </div>
         </div>
       </section>
+   
     </>
   );
 }
