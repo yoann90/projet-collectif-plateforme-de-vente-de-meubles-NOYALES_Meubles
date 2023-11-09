@@ -2,11 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import meuble from "../images/canapés-colorés.jpeg";
 import chaise from "../images/Chaise en Velours.jpeg";
-
 export default function Cart() {
   const [cartItems, setCartItems] = useState([]);
   const cartKey = "myCart";
-
   // Charger le panier depuis localStorage au chargement de la page
   useEffect(() => {
     const storedCart = localStorage.getItem(cartKey);
@@ -14,37 +12,30 @@ export default function Cart() {
       setCartItems(JSON.parse(storedCart));
     }
   }, []);
-
   const addItemToCart = (item) => {
     localStorage.setItem(cartKey, JSON.stringify([...cartItems, item]));
     setCartItems([...cartItems, item]);
   };
-
   const removeItemFromCart = (itemIndex) => {
     const updatedCart = cartItems.filter((_, index) => index !== itemIndex);
     localStorage.setItem(cartKey, JSON.stringify(updatedCart));
-
     setCartItems(updatedCart);
   };
-
   // Calculer le total du panier
   const calculateTotal = () => {
     return cartItems.reduce((total, item) => total + item.price, 0);
   };
-
   return (
     <div className="box-cart">
       <div className="box-title">
         <img src={meuble} alt="" />
         <h2>Panier</h2>
       </div>
-
       <div className="detail-product">
         <div className="detail-name">
           {/* <p>Product</p>
           <p>Description</p>
           <p>remove</p> */}
-
           {/* <hr /> */}
         </div>
       </div>
@@ -67,7 +58,6 @@ export default function Cart() {
           ))}
         </ul>
       </div>
-
       <button
         className="add"
         onClick={() =>

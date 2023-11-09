@@ -12,8 +12,17 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
 
+
+
 function PagePrincipal() {
+  // let [cartKey,setcartKey] = useState("");
+  // const [cartItems, setCartItems] = useState([]);
+  // const cartKey = "myCart";
+  // Charger le panier depuis localStorage au chargement de la page
+  
+
 let [data,setData]= useState([]);
+
 
 useEffect(()=>{
 const requestProducts = async()=>{
@@ -23,6 +32,8 @@ setData(requete.data)
 console.log(requete.data)}
 requestProducts()
 },[])
+
+
 
 // const renderListOfMeuble = (data) => {
 //   return data.map((meuble,i) => 
@@ -48,6 +59,7 @@ requestProducts()
 
 return (
     <>
+      {/* <Cart cartItems={cartItems} addItemToCart={addItemToCart} removeItemFromCart={removeItemFromCart} cartKey={meuble._id} /> */}
       <header>
         <div className="gallery-item">
           <div className="container-img">
@@ -89,7 +101,13 @@ return (
               <p>{meuble.price}</p>
               <div className="link-detail">
                 <Link to={"/detail/"+ meuble._id}>See more</Link>
-                <Link to="/Cart">Add to cart</Link>
+                 <button onClick={() => {setcartKey(`${meuble._id}`);
+                  addItemToCart({
+            photo: `${`http://localhost:3003/`+ meuble.img.img1.src}`,
+            name: `${meuble.title}`,
+            price: `${meuble.price}`,
+            description: `${meuble.description}`,
+          })}}>Add to cart</button>
               </div>
               <div className="middle">
                 <div className="seeMore">
@@ -97,91 +115,7 @@ return (
                 </div>
               </div>
             </div>)}
-            {/* <div className="img-card">
-              <img src={chaise} alt="" />
-              <a href="">
-                <h3>Chaise en Velours</h3>
-              </a>
-              <p>$40.00</p>
-              <div className="link-detail">
-                <Link to="/detail">See more</Link>
-                <Link to="/Cart">Add to cart</Link>
-              </div>
-              <div className="middle">
-                <div className="seeMore">
-                  <Link to="/detail">See more</Link>
-                </div>
-              </div>
-            </div>
-            <div className="img-card">
-              <img src={chaise2} alt="" />
-              <a href="">
-                <h3>Chaise de Salle à Manger</h3>
-              </a>
-              <p>$40.00</p>
-              <div className="link-detail">
-                <Link to="/detail">See more</Link>
-                <Link to="/Cart">Add to cart</Link>
-              </div>
-              <div className="middle">
-                <div className="seeMore">
-                  <Link to="/detail">See more</Link>
-                </div>
-              </div>
-            </div>
-            <div className="img-card">
-              <img src={chaise} alt="" />
-              <a href="">
-                <h3>Chaise en Velours</h3>
-              </a>
-              <p>
-                $10.00 <strike>$40.00</strike>
-              </p>
-              <div className="link-detail">
-                <Link to="/detail">See more</Link>
-                <Link to="/Cart">Add to cart</Link>
-              </div>
-              <div className="middle">
-                <div className="seeMore">
-                  <Link to="/detail">See more</Link>
-                </div>
-              </div>
-              <div className="badge-overlay">
-                <span className="top-left badge orange">Sale 75% OFF</span>
-              </div>
-            </div>
-            <div className="img-card">
-              <img src={chaise2} alt="" />
-              <a href="">
-                <h3>Chaise de Salle à Manger</h3>
-              </a>
-              <p>$40.00</p>
-              <div className="link-detail">
-                <Link to="/detail">See more</Link>
-                <Link to="/Cart">Add to cart</Link>
-              </div>
-              <div className="middle">
-                <div className="seeMore">
-                  <Link to="/detail">See more</Link>
-                </div>
-              </div>
-            </div>
-            <div className="img-card">
-              <img src={chaise} alt="" />
-              <a href="">
-                <h3>Chaise en Velours</h3>
-              </a>
-              <p>$40.00 </p>
-              <div className="link-detail">
-                <Link to="/detail">See more</Link>
-                <Link to="/Cart">Add to cart</Link>
-              </div>
-              <div className="middle">
-                <div className="seeMore">
-                  <Link to="/detail">See more</Link>
-                </div>
-              </div>
-            </div> */}
+ 
           </div>
         </div>
         <div className="row">
@@ -407,6 +341,8 @@ return (
           </div>
         </div>
       </section>
+          
+        
     </>
   );
 }
