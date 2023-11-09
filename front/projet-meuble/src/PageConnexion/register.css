@@ -1,0 +1,124 @@
+body {
+    margin: 0;
+    /* font-family: ; */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    height: 50vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-image: url("../../images/salonconnexionjpg.jpg") ; */
+    /* border: 3px solid palevioletred; */
+    
+}
+.container-inscription {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    transform: translate(-50%,);
+    width: 50%;
+    height: 50%;
+    /* margin: 0 0 10px 0; */
+    background: rgba(255, 255, 255, 0.653);
+    border: 10px solid rgba(231, 222, 222, 0.751);
+    border-radius: 50px;
+}
+
+
+.inputs-Champs-infos-ensemble2 {
+    display: flex;
+    margin: 163px 0 40px 90px;
+    justify-content: center;
+    align-content: center;
+    display: flex;
+    width: 65%;
+    height: 33%;
+    flex-direction: column;
+    gap: 30px;
+    /* border: 3px solid orangered; */
+    font-size: calc(10px + 1vw);
+}
+
+.input-champs-infos-indiv2 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    gap: 10px;
+    width: 100%;
+    font-size: calc(10px + 2vw);
+    background: rgba(200, 115, 40, 0.621);
+    border-radius: 6px;
+    /* border: 3px solid red; */
+    padding: 2px 0px;
+  
+    
+}
+
+.title{
+    display: flex;
+    align-items: center;
+    color:rgba(246, 128, 31, 0.749);
+    /* border: 3px solid #d32828; */
+    flex-direction:initial;
+    justify-content: center;
+    font-size: calc(20px + 2vw); 
+    font-weight: 700;
+    margin: 38px 0 0 0;
+}
+
+.input-champs-infos-indiv2 input { /* input dans input là ou on écrit les champs (email et mdp)*/
+    height: 50px;
+    width: 70%;
+    background: transparent;
+    border:none;
+    outline: none;
+    color: rgb(248, 245, 245);
+    font-size: 25px;
+    font-size: calc(0px + 2vw);
+    /* border: 5px solid green; */
+}
+
+.souligner {
+    display: flex;  
+    width: 40%;
+    position:fixed;
+    /* position: relative; */
+    /* flex-direction:initial; */
+    justify-content: center;
+    height: 6px;
+    border-radius: 9px;
+    /* border: 6px solid rgba(31, 246, 121, 0.749); */
+}
+
+.img-utilisateur img{
+    width: 5%;
+    margin: 0px 5px -10px 5px;
+    
+
+}
+.img-email img{
+    width: 5%;
+    margin: 0px 5px -5px 5px;
+}
+.img-cadenas img{
+    width: 5%;
+    margin: 0px 5px -5px 5px;
+}
+
+.submit-container{
+    display: grid;
+}
+
+.submit-container button{
+    display: flex;
+    color: white;
+    background: rgba(200, 115, 40, 0.541);
+    border-radius: 50px;
+    font-size: 43px;
+    border:  rgba(200, 115, 40, 0.541);
+    cursor: pointer;
+    font-weight: 700;
+    justify-self: center;
+    margin: 30px 25px 20px 25px;
+    padding: 8px 15px 8px 10px;
+}
