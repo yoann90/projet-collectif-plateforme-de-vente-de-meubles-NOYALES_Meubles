@@ -101,13 +101,16 @@ return (
               <p>{meuble.price}</p>
               <div className="link-detail">
                 <Link to={"/detail/"+ meuble._id}>See more</Link>
-                 <button onClick={() => {setcartKey(`${meuble._id}`);
+                 <button 
+                 onClick={() => {setcartKey(`${meuble._id}`);
                   addItemToCart({
             photo: `${`http://localhost:3003/`+ meuble.img.img1.src}`,
             name: `${meuble.title}`,
             price: `${meuble.price}`,
             description: `${meuble.description}`,
-          })}}>Add to cart</button>
+          })}}> 
+          <a  className="addto" href="/Cart">Add to cart</a>
+            </button>
               </div>
               <div className="middle">
                 <div className="seeMore">

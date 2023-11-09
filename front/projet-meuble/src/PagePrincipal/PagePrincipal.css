@@ -293,6 +293,26 @@ color: var(--ColorOrange);
 .img-card a h3:hover {
   color: var(--ColorOrange);
 }
+.img-card button {
+  text-decoration: none;
+  list-style: none;
+  color: transparent;
+  background: transparent;
+  border: none;
+}
+.addto {
+   text-decoration: none;
+  color: white;
+  border: 1px solid var(--ColorOrange);
+  border-radius: 10px;
+  background: var(--ColorOrange);
+  padding: 12px 15px;
+  font-size: calc(5px + 1vw);
+  line-height: 5px;
+  transition: background 0.5s ease-in-out, color 0.5s ease-in-out,
+    border 0.5s ease-in-out;
+    cursor: pointer;
+}
 .link-detail {
   position: relative;
   display: flex;
