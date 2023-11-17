@@ -107,7 +107,8 @@ return (
             name: `${meuble.title}`,
             price: `${meuble.price}`,
             description: `${meuble.description}`,
-          })}}>Add to cart</button>
+          })}}> <a className="addto" href="/cart"> Add to cart</a>
+            </button>
               </div>
               <div className="middle">
                 <div className="seeMore">
