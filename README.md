@@ -35,3 +35,8 @@ Start the server
 ```bash
   npm run start
 ```
+<img width="1440" alt="Capture d’écran 2024-01-29 à 14 06 00" src="https://github.com/yoann90/projet-collectif-plateforme-de-vente-de-meubles-NOYALES_Meubles/assets/135041871/b8712cda-e06c-421c-87ff-b88bede80e6e">
+
+
+
+
