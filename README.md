@@ -11,6 +11,8 @@
 <img width="1440" alt="Capture d’écran 2024-01-29 à 14 06 00" src="https://github.com/yoann90/projet-collectif-plateforme-de-vente-de-meubles-NOYALES_Meubles/assets/135041871/b8712cda-e06c-421c-87ff-b88bede80e6e">
 
 
+*
+
 <img width="1434" alt="Capture d’écran 2024-01-29 à 14 06 29" src="https://github.com/yoann90/projet-collectif-plateforme-de-vente-de-meubles-NOYALES_Meubles/assets/135041871/66e83daf-8f9c-45ae-ae91-080b20c52762">
 
 
