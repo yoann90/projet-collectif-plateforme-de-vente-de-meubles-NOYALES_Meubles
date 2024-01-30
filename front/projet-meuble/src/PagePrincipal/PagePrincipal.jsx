@@ -108,12 +108,7 @@ return (
             name: `${meuble.title}`,
             price: `${meuble.price}`,
             description: `${meuble.description}`,
-<<<<<<< HEAD
-          })}}> 
-          <a  className="addto" href="/Cart">Add to cart</a>
-=======
           })}}> <a className="addto" href="/cart"> Add to cart</a>
->>>>>>> d7d339f513a5d3c6eeb063d015660cf9d1032ce4
             </button>
               </div>
               <div className="middle">
