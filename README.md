@@ -2,6 +2,11 @@
 
 Concevoir un site e-commerce  permettant aux utilisateurs d'ajouter des produits à leur panier et de voir la page détail du produit.
 
+![https://github.com/Your_Repository_Name/Your_GIF_Name.gif](https://github.com/yoann90/projet-collectif-plateforme-de-vente-de-meubles-NOYALES_Meubles/blob/master/site-vente%20de%20meuble.gif)
+
+
+
+
 ## Tech Stack
 
 
